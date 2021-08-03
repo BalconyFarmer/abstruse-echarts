@@ -1,6 +1,6 @@
 {
-  "name": "laowang1993ui",
-  "version": "0.1.9",
+  "name": "abstruse-js",
+  "version": "0.0.1",
   "private": false,
   "main": "lib/index.umd.min.js",
   "scripts": {

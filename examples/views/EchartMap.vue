@@ -49,7 +49,8 @@
 </template>
 
 <script>
-import {Abstruse} from "../../packages/Abstruse/Abstruse";
+// import {Abstruse} from "../../packages/Abstruse/Abstruse";
+import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
     name: "EchartMap.vue",

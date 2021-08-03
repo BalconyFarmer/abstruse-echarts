@@ -36,25 +36,6 @@
                     <PicturesWalls></PicturesWalls>
                 </div>
 
-<!--                <div v-if="route == 7" class="rightMain ">-->
-<!--                    <PictureTree></PictureTree>-->
-<!--                </div>-->
-
-<!--                <div v-if="route == 8" class="rightMain ">-->
-<!--                    <ScrollTable></ScrollTable>-->
-<!--                </div>-->
-
-<!--                <div v-if="route == 9" class="rightMain ">-->
-<!--                    <fiveNumber></fiveNumber>-->
-<!--                </div>-->
-
-<!--                <div v-if="route == 10" class="rightMain ">-->
-<!--                    <ThreeNumInGrid></ThreeNumInGrid>-->
-<!--                </div>-->
-
-<!--                <div v-if="route == 11" class="rightMain ">-->
-<!--                    <ThingsInBread></ThingsInBread>-->
-<!--                </div>-->
             </div>
         </div>
     </div>

@@ -34,8 +34,9 @@
 </template>
 
 <script>
-import {Abstruse} from "../../packages/Abstruse/Abstruse";
-// import echarts from 'echarts'
+// import {Abstruse} from "../../packages/Abstruse/Abstruse";
+import {Abstruse} from "../../lib/index.umd.js";
+
 import * as echarts from 'echarts'
 
 export default {
