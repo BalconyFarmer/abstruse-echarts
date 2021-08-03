@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import {PicWall3D} from "../../packages/Abstruse/ThreeD/PicWall3D";
+// import {Abstruse} from "../../packages/Abstruse/Abstruse";
+import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
     name: "PicturesWall.vue",
@@ -22,7 +23,7 @@ export default {
                 }
             ]
 
-            this.oPicWall = new PicWall3D(dom);
+            this.oPicWall = new Abstruse.PicWall3D(dom);
             this.oPicWall.initPicWall(data);
         },
     },

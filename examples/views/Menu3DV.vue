@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import {Menu3D} from "../../packages/Abstruse/ThreeD/Menu3D";
+// import {Abstruse} from "../../packages/Abstruse/Abstruse";
+import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
     name: "Menu3DV.vue",
@@ -25,7 +26,7 @@ export default {
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
             ]
 
-            this.menu3D = new Menu3D(dom)
+            this.menu3D = new Abstruse.Menu3D(dom)
             this.menu3D.init3D(menuData)
 
             this.menu3D.eventBus.addEventListener('jumpRoute', function (data) {

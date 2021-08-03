@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import init from "../../packages/Abstruse/ThreeD/Img3D/3d-pic";
+// import {Abstruse} from "../../packages/Abstruse/Abstruse";
+import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
     name: "PicturesWalls.vue",
@@ -39,7 +40,7 @@ export default {
             ]
             this.$nextTick(() => {
                 setTimeout(() => {
-                    init(list, (res) => {
+                    Abstruse.init3dPic(list, (res) => {
                         this.projectId = res.projectId;
                         this.projectName = res.title;
                         this.poName = res.poName;
