@@ -5,6 +5,7 @@ import store from './store'
 import VueAMap from "vue-amap";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import "./views/styles/base.scss"
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
