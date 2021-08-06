@@ -3,6 +3,7 @@
  */
 import {yunanMapData} from "./map/mapDataForEcahrt/manualYunnan";
 import {Radio} from "./echartOptions/Radio";
+import {Others} from "./echartOptions/Others";
 import {Lines} from "./echartOptions/Lines";
 import {SingleNumber} from "./echartOptions/SingleNumber";
 import {Bar} from "./echartOptions/Bar";
@@ -21,6 +22,7 @@ let Abstruse = {};
 Abstruse.Radio = Radio;
 Abstruse.Lines = Lines;
 Abstruse.Bar = Bar;
+Abstruse.Others = Others;
 Abstruse.Pie = Pie;
 Abstruse.MapFromGaode = MapFromGaode;
 Abstruse.MapFromGaodeCover = MapFromGaodeCover;

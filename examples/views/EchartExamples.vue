@@ -6,7 +6,7 @@
         </div>
         <div class="columItem">
             <div class="e11" id="eContainer8">111</div>
-                <div class="e11" id="eContainer8_1">111</div>
+            <div class="e11" id="eContainer8_1">111</div>
             <div class="e11" id="eContainer8_2">111</div>
             <div class="e11" id="eContainer8_3">111</div>
         </div>
@@ -30,20 +30,22 @@
             <div class="e11" id="eContainer7">111</div>
             <div class="e11" id="eContainer7_1"></div>
         </div>
+
+        <div class="columItem">
+            <div class="e11" id="eContainer_wordCloud">111</div>
+        </div>
     </div>
 </template>
 
 <script>
-// import {Abstruse} from "../../packages/Abstruse/Abstruse";
-import {Abstruse} from "../../lib/index.umd.js";
+import {Abstruse} from "../../packages/Abstruse/Abstruse";
+// import {Abstruse} from "../../lib/index.umd.js";
 
 import * as echarts from 'echarts'
 
 export default {
     name: "EchartExamples.vue",
-    components: {
-
-    },
+    components: {},
     methods: {
 
         update1() {
@@ -64,6 +66,7 @@ export default {
             this.makePie4()
             this.makeSingleNumber1()
             this.makeSingleNumber2()
+            this.makeWordCloud()
         },
         makeRadio1() {
             const a = new Abstruse.Radio()
@@ -183,7 +186,7 @@ export default {
                 [50, 30, 20,],
                 [10, 20, 30],
             ]
-            a.initDoubleBarLevel(data,legend,angleAxis)
+            a.initDoubleBarLevel(data, legend, angleAxis)
 
             newChart.setOption(a.option);
         },
@@ -298,7 +301,7 @@ export default {
                 //母图
                 {
                     value: 335, //占比
-                    name:  '少数民族', //描述项
+                    name: '少数民族', //描述项
 
                 },
                 {
@@ -339,6 +342,20 @@ export default {
             a.singlePie(90, '#111111')
             newChart.setOption(a.option);
         },
+        makeWordCloud() {
+            const a = new Abstruse.Others()
+            const dom = document.getElementById('eContainer_wordCloud')
+            const newChart = echarts.init(dom);
+            let data = [
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+            ]
+            a.init(data)
+            newChart.setOption(a.option);
+
+
+        }
     },
     mounted() {
         this.update1()
@@ -353,6 +370,7 @@ export default {
     justify-content: center;
     align-items: center;
 }
+
 .rightMain1 {
 
     width: 200%;
