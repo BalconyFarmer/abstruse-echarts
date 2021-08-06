@@ -366,39 +366,18 @@ class MapFromGaode {
     /**
      * 添加热力图
      */
-    addHeat(data) {
+    addHeat() {
 
-        var heatmapData = [
+        let heatmapData = [
             {
-            "lng": 116.191031,
-            "lat": 39.988585,
-            "count": 10
+            "lng": 100.792831,
+            "lat": 21.918056,
+            "count": 500
         }, {
-            "lng": 116.389275,
-            "lat": 39.925818,
-            "count": 11
-        }, {
-            "lng": 116.287444,
-            "lat": 39.810742,
-            "count": 12
-        }, {
-            "lng": 116.481707,
-            "lat": 39.940089,
-            "count": 13
-        }, {
-            "lng": 116.410588,
-            "lat": 39.880172,
-            "count": 14
-        }, {
-            "lng": 116.394816,
-            "lat": 39.91181,
-            "count": 15
-        }, {
-            "lng": 116.416002,
-            "lat": 39.952917,
-            "count": 16
-        }, ]
-
+            "lng": 100.792831,
+            "lat": 22,
+            "count": 1000
+        }]
 
         //详细的参数,可以查看heatmap.js的文档 http://www.patrick-wied.at/static/heatmapjs/docs.html
         //参数说明如下:
@@ -419,9 +398,9 @@ class MapFromGaode {
             //初始化heatmap对象
             let heatmap = new AMap.Heatmap(self.mMap, {
                 radius: 45, //给定半径
-                opacity: [0, 0.8],
+                opacity: [0.2, 0.8],
                 gradient: {
-                    0.5: 'blue',
+                    0.5: 'rgb(129,239,18)',
                     0.65: 'rgb(117,211,248)',
                     0.7: 'rgb(0, 255, 0)',
                     0.9: '#ffea00',
@@ -431,7 +410,7 @@ class MapFromGaode {
             //设置数据集：该数据为北京部分“公园”数据
             heatmap.setDataSet({
                 data: heatmapData,
-                max: 100
+                max: 1000
             });
         });
 

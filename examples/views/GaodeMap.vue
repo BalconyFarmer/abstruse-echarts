@@ -36,6 +36,7 @@
             <div class="menu3">
                 <el-button size="mini" @click="addImgLayer">添加图片层</el-button>
                 <el-button size="mini" @click="addCover">添加类Echart层</el-button>
+                <el-button size="mini" @click="addHeat">添加热力图</el-button>
             </div>
 
         </div>
@@ -59,8 +60,8 @@
 </template>
 
 <script>
-// import {Abstruse} from "../../packages/Abstruse/Abstruse";
-import {Abstruse} from "../../lib/index.umd.js";
+import {Abstruse} from "../../packages/Abstruse/Abstruse";
+// import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
     name: "GaodeMap.vue",
@@ -87,6 +88,10 @@ export default {
         }
     },
     methods: {
+        addHeat() {
+            this.objGmap.addHeat()
+
+        },
         addImgLayer() {
             this.objGmap.addImgLayer()
         },
@@ -120,12 +125,6 @@ export default {
             if (name) {
                 this.objGmap = new Abstruse.MapFromGaode("forGMap")
                 await this.objGmap.updateCity(name)
-                const self = this
-                setTimeout(function () {
-                    self.objGmap.addHeat()
-
-                }, 1000)
-
             } else {
                 this.objGmap = new Abstruse.MapFromGaodeCover("forGMap")
                 await this.objGmap.updateCity('西双版纳傣族自治州')
