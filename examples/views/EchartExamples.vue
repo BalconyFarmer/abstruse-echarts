@@ -33,6 +33,7 @@
 
         <div class="columItem">
             <div class="e11" id="eContainer_wordCloud">111</div>
+            <div class="e11" id="eContainer_wordCloud1">111</div>
         </div>
     </div>
 </template>
@@ -67,6 +68,7 @@ export default {
             this.makeSingleNumber1()
             this.makeSingleNumber2()
             this.makeWordCloud()
+            this.makeWordCloud1()
         },
         makeRadio1() {
             const a = new Abstruse.Radio()
@@ -352,6 +354,20 @@ export default {
                 {name: "keke", value: 100},
             ]
             a.init(data)
+            newChart.setOption(a.option);
+
+
+        },
+        makeWordCloud1() {
+            const a = new Abstruse.Others()
+            const dom = document.getElementById('eContainer_wordCloud1')
+            const newChart = echarts.init(dom);
+            let data = [
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+            ]
+            a.initNoCircleWordCloud(data)
             newChart.setOption(a.option);
 
 
