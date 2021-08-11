@@ -17,9 +17,7 @@
             <div>
                 <el-button size="mini" @click="addHeat">添加热力图</el-button>
                 <el-button size="mini" @click="addToolTips">添加Tooltip</el-button>
-
                 <el-button size="mini" @click="addMapData">添加子区域数据</el-button>
-
             </div>
 
             <div>

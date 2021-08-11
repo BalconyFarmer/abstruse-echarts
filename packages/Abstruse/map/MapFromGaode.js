@@ -216,22 +216,22 @@ class MapFromGaode {
         if (iconShape == "为民服务站") {
             icon = new AMap.Icon({
                 image: require("./imgs/mapIcon/为民服务站.png"),
-                size: new AMap.Size(100, 100)
+                size: new AMap.Size(50, 50)
             });
         } else if (iconShape == "云岭先锋APP") {
             icon = new AMap.Icon({
                 image: require("./imgs/mapIcon/云岭先锋APP.png"),
-                size: new AMap.Size(100, 100)
+                size: new AMap.Size(50, 50)
             });
         } else if (iconShape == "党建TV") {
             icon = new AMap.Icon({
                 image: require("./imgs/mapIcon/党建TV.png"),
-                size: new AMap.Size(100, 100)
+                size: new AMap.Size(50, 50)
             });
         } else if (iconShape == "党建盒子") {
             icon = new AMap.Icon({
                 image: require("./imgs/mapIcon/党建盒子.png"),
-                size: new AMap.Size(100, 100)
+                size: new AMap.Size(50, 50)
             });
         } else {
             icon = new AMap.Icon({
@@ -400,11 +400,11 @@ class MapFromGaode {
                 radius: 45, //给定半径
                 opacity: [0.2, 0.8],
                 gradient: {
-                    0.5: 'rgb(129,239,18)',
-                    0.65: 'rgb(117,211,248)',
-                    0.7: 'rgb(0, 255, 0)',
-                    0.9: '#ffea00',
-                    1.0: 'red'
+                    0.5: 'rgba(255,0,54,0.3)',
+                    0.65: 'rgba(255,0,54,0.5)',
+                    0.7: 'rgba(255,0,54,0.6)',
+                    0.9: 'rgba(255,0,54,0.8)',
+                    1.0: 'rgb(255,0,54,0.9)'
                 }
             });
             //设置数据集：该数据为北京部分“公园”数据
