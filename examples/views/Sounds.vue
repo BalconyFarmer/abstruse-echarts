@@ -1,9 +1,11 @@
 <!--各种播放器:  https://uneedcode.com/article/204327968730472723-->
 <template>
-    <div>
+    <div class="musicAll" id="_musicAll">
         自动播放音乐
         <el-button @click="run">run</el-button>
         <el-button @click="pause">pause</el-button>
+
+        <audio src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
     </div>
 </template>
 
@@ -14,7 +16,8 @@ export default {
     name: "Sounds.vue",
     data() {
         return {
-            soundApp: null
+            soundApp: null,
+            first: true
         }
     },
     methods: {
@@ -38,11 +41,25 @@ export default {
         }
     },
     mounted() {
+        const self = this
+        const dom = document.getElementById("_musicAll")
+        dom.addEventListener('mousedown',function (){
+            // debugger
+            if (self.first) {
+                self.run()
+                const see = 1
+                console.log(see,'see')
+            }
+            self.first = false
+        })
 
     }
 }
 </script>
 
 <style scoped>
-
+.musicAll {
+    width: 100%;
+    height: 100%;
+}
 </style>
