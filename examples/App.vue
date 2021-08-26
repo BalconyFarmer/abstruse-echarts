@@ -9,6 +9,7 @@
                     <div class="btns" @click="changeRoute(4)">3DMenu</div>
                     <div class="btns" @click="changeRoute(5)">3DPicturesWalls</div>
                     <div class="btns" @click="changeRoute(6)">3DIMG</div>
+                    <div class="btns" @click="changeRoute(7)">sounds</div>
                 </div>
             </div>
             <div class="right">
@@ -36,6 +37,10 @@
                     <PicturesWalls></PicturesWalls>
                 </div>
 
+                <div v-if="route == 7" class="rightMain ">
+                    <Sounds></Sounds>
+                </div>
+
             </div>
         </div>
     </div>
@@ -49,14 +54,15 @@ import EchartMap from "./views/EchartMap";
 import GaodeMap from "./views/GaodeMap";
 import Menu3DV from "./views/Menu3DV"
 import PicturesWall from "./views/PicturesWall";
+import Sounds from "./views/Sounds";
 
 export default {
     components: {
-          PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV, PicturesWall,
+        Sounds, PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV, PicturesWall,
     },
     data: function () {
         return {
-            route: 3,
+            route: 7,
         }
     },
     watch: {
@@ -123,7 +129,7 @@ body, html, #app {
         flex-direction: row;
         justify-content: flex-start;
         text-align: left;
-        cursor:pointer;
+        cursor: pointer;
 
         .btns {
             border-bottom: 2px solid gray;
