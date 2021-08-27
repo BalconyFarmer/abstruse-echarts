@@ -1,11 +1,17 @@
 <!--各种播放器:  https://uneedcode.com/article/204327968730472723-->
 <template>
-    <div class="musicAll" id="_musicAll">
-        自动播放音乐
-        <el-button @click="run">run</el-button>
-        <el-button @click="pause">pause</el-button>
+    <div class="musicAll">
 
-        <audio src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
+        <div id="_musicAll" style="border: 1px solid yellow">
+            <el-button @click="run">run</el-button>
+            <el-button @click="pause">pause</el-button>
+        </div>
+
+        <div>
+            <audio id="audioID" src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
+            <el-button @click="audioPlay">audio pLAY</el-button>
+        </div>
+
     </div>
 </template>
 
@@ -38,20 +44,27 @@ export default {
         },
         pause() {
             this.soundApp.pause()
+        },
+
+
+        audioPlay() {
+            const dom = document.getElementById("audioID")
+            dom.play();
         }
     },
     mounted() {
         const self = this
         const dom = document.getElementById("_musicAll")
-        dom.addEventListener('mousedown',function (){
+        dom.addEventListener('mousedown', function () {
             // debugger
             if (self.first) {
                 self.run()
                 const see = 1
-                console.log(see,'see')
+                console.log(see, 'see')
             }
             self.first = false
         })
+
 
     }
 }
