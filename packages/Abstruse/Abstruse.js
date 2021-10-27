@@ -34,3 +34,21 @@ Abstruse.PicWall3D = PicWall3D;
 Abstruse.init3dPic = init;
 Abstruse.yunanMapData = yunanMapData;
 export {Abstruse};
+
+// function ff() {
+//     const recurrenceLimit = 50; // 50性能可以
+//     let allRegions = [];
+//     let index11 = 0;
+//
+//     async function recurrence(id) {
+//         const list = await self.getRegionTree(id);
+//         for(let i = 0; i < list.length; i++) {
+//             allRegions.push(list[i]);
+//             if(list[i].isParent && (index11 < recurrenceLimit)) {
+//                 await recurrence.bind(self)(list[i].id);
+//             }
+//             index11 += 1;
+//         }
+//     }
+//     await recurrence.bind(self)(id);
+// }
