@@ -35,6 +35,10 @@
             <div class="e11" id="eContainer_wordCloud">111</div>
             <div class="e11" id="eContainer_wordCloud1">111</div>
         </div>
+
+        <div class="columItem">
+            <div class="e11" id="eContainer_Graph">111</div>
+        </div>
     </div>
 </template>
 
@@ -69,6 +73,7 @@ export default {
             this.makeSingleNumber2()
             this.makeWordCloud()
             this.makeWordCloud1()
+            this.makeGraphic()
         },
         makeRadio1() {
             const a = new Abstruse.Radio()
@@ -278,8 +283,6 @@ export default {
             a.circlePie(echartData, name, newChart)
             a.changeLegendPosition('bottom')
             newChart.setOption(a.option);
-
-
         },
         makePie3() {
             const a = new Abstruse.Pie()
@@ -371,7 +374,20 @@ export default {
             newChart.setOption(a.option);
 
 
+        },
+        makeGraphic() {
+            const a = new Abstruse.Others()
+            const dom = document.getElementById('eContainer_Graph')
+            const newChart = echarts.init(dom);
+            let data = [
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+                {name: "keke", value: 100},
+            ]
+            a.initGrahpic(data)
+            newChart.setOption(a.option);
         }
+
     },
     mounted() {
         this.update1()
