@@ -19,6 +19,10 @@
 
 ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/7.png)
 
+应用方式1:直接引用
+
+应用方式2:间接引用
+
 博客地址:
 https://segmentfault.com/a/1190000039748000
 
