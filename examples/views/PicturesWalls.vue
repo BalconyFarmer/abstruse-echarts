@@ -60,9 +60,9 @@ export default {
 <style lang="scss">
 
 .ii6 {
-    width: 50%;
-    height: 50%;
-    border: 4px solid yellow !important;
+    width: 80%;
+    height: 80%;
+    border: 1px solid yellow !important;
     z-index: 1;
 
     #projectDone {

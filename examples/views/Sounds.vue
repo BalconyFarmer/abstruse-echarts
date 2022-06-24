@@ -2,14 +2,24 @@
 <template>
     <div class="musicAll">
 
-        <div id="_musicAll" style="border: 1px solid yellow">
-            <el-button @click="run">run</el-button>
-            <el-button @click="pause">pause</el-button>
+        <div class="colu" id="_musicAll">
+            <div style="color: white"><a style="color: white" href="https://howlerjs.com/">Howl音乐引擎:</a></div>
+            <div>
+                <el-button @click="run">Howl-run</el-button>
+            </div>
+            <div>
+                <el-button @click="pause">pause</el-button>
+            </div>
         </div>
 
-        <div>
-            <audio id="audioID" src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
-            <el-button @click="audioPlay">audio pLAY</el-button>
+        <div class="colu">
+            <div style="color: white">audio标签</div>
+            <div>
+                <audio id="audioID" src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
+            </div>
+            <div>
+                <el-button @click="audioPlay">audio pLAY</el-button>
+            </div>
         </div>
 
     </div>
@@ -74,5 +84,21 @@ export default {
 .musicAll {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.colu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid yellow
+}
+
+div {
+    margin: 5px;
 }
 </style>
