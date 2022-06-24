@@ -12,9 +12,7 @@
 
 ### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/3.png)4.threejs 3D menus
 
-### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/4.png)5.3D图片 (未完成)
-
-### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/5.png)6.3D图片 (未完成) 引用他人组件
+### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/4.png)6.3D图片 (未完成) 引用他人组件
 
 ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/6.png)
 
