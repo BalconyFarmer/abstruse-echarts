@@ -60,12 +60,6 @@ class Pie extends Base {
     /**
      * 多环图
      * @param data
-     const data = [
-     {name: "农村党支部", value: 236, count: 4423, rate: 0},
-     {name: "gaili", value: 236, count: 4423, rate: 0},
-     ]
-     const name = '默认'
-     * @returns {{legend: {itemGap: number, data: (*|*[]), orient: string, x: number, y: string, textStyle: {color: string}}, series: [{data: *, clockwise: boolean, center: [string, string], avoidLabelOverlap: boolean, itemStyle: {normal: {borderColor: string, borderWidth: number}}, minAngle: number, label: {normal: {formatter: string, show: boolean, rich: {text: {verticalAlign: string, padding: number, color: string, fontSize: number, align: string}, value: {verticalAlign: string, color: string, fontSize: number, align: string}}, position: string}, emphasis: {show: boolean, textStyle: {fontSize: number}}}, type: string, radius: [string, string]}]}}
      */
     circlePie(data, name, newChart) {
         let color = ["#efb41b", "#26dcec", "#2fe5bc", "#06a2fe", "#c87ef3"];

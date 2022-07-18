@@ -1,0 +1,15 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["./packages/Abstruse"],
+    "exclude": ["./src/lib/demo"],
+    "includePattern": ".+\\.js$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "recurse": true,
+    "destination": "./jsdocOut/"
+  }
+}

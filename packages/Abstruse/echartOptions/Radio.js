@@ -2,6 +2,7 @@ import { Base } from "./Base";
 
 /**
  * 雷达图
+ * @constructor
  */
 class Radio extends Base {
     constructor() {
@@ -64,29 +65,6 @@ class Radio extends Base {
         };
     }
 
-    /**
-     *
-     * 只传一个参数
-     * @param data
-     * [
-     *      { "name": "基本组织", value: 150,legend: "forToolTip"},
-     *      { "name": "基本组织", value: 100,legend: "forToolTip"},
-     *      { "name": "基本组织", value: 112,legend: "forToolTip"}
-     * ]
-     *
-     * 传两个参数
-     * @param data2
-     *[
-     *      { "name": "基本组织", value: 150, legend: "2020年" },
-     *      { "name": "基本组织", value: 100, legend: "2020年" },
-     *      { "name": "基本组织", value: 112, legend: "2020年" }
-     * ],
-     * [
-     *      { "name": "基本组织", value: 333, legend: "2021年" },
-     *      { "name": "基本组织", value: 444, legend: "2021年" },
-     *      { "name": "基本组织", value: 555, legend: "2021年" }
-     * ]
-     */
     addValue(data, data2) {
         if(data2) {
             this.option.legend.data = [];

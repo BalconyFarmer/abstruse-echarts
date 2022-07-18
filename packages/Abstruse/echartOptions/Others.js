@@ -4,7 +4,9 @@ import 'echarts-wordcloud';
 
 /**
  * 单一数字初始化类 如: 液体图 仪表盘 百分比图等
+ * @constructor
  */
+
 class Others extends Base {
     constructor() {
         super();
@@ -13,8 +15,7 @@ class Others extends Base {
 
     /**
      * 带大小圆圈的词云
-     * @param data
-     * @returns {{yAxis: {min: number, gridIndex: number, max: number, show: boolean, nameGap: number, nameLocation: string}, xAxis: {min: number, gridIndex: number, max: number, show: boolean, nameGap: number, nameLocation: string, type: string}, grid: {top: number, bottom: number, show: boolean}, series: [{symbol: string, data: [], symbolSize: number, itemStyle: {normal: {color: string}}, label: {normal: {formatter: string, color: string, show: boolean, textStyle: {fontSize: number}}}, type: string}], tooltip: {formatter: function(*): string, trigger: string}}}
+     * @param
      */
     init(data) {
 

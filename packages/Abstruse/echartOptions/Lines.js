@@ -3,6 +3,10 @@ import * as echarts from 'echarts'
 
 import {Base} from "./Base";
 
+/**
+ * BaseBaseBase
+ * @constructor
+ */
 class Lines extends Base {
     constructor() {
         super();
