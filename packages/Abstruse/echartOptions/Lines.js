@@ -4,12 +4,13 @@ import * as echarts from 'echarts'
 import {Base} from "./Base";
 
 /**
- * BaseBaseBase
+ * 折线类
  * @constructor
  */
 class Lines extends Base {
     constructor() {
         super();
+        /**选项*/
         this.option = null;
         this.init();
 
