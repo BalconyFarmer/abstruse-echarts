@@ -6,11 +6,11 @@
 </template>
 
 <script>
-// import {Abstruse} from "../../packages/Abstruse/Abstruse";
-import {Abstruse} from "../../lib/index.umd.js";
+import {Abstruse} from "../../packages/Abstruse/Abstruse";
+// import {Abstruse} from "../../lib/index.umd.js";
 
 export default {
-    name: "Menu3DV.vue",
+    name: "Menu3DV1.vue",
     data() {
         return {}
     },
@@ -24,9 +24,11 @@ export default {
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
+                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
+                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
             ]
 
-            this.menu3D = new Abstruse.Menu3D(dom)
+            this.menu3D = new Abstruse.Menu3D1(dom)
             this.menu3D.init3D(menuData)
 
             this.menu3D.eventBus.addEventListener('jumpRoute', function (data) {

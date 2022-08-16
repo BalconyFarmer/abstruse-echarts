@@ -14,6 +14,7 @@ import {MapFormEchart} from "./map/MapFormEchart";
 import {Canvas2D} from "./ThreeD/Canvas2D";
 import {Menu3D} from "./ThreeD/Menu3D";
 import {PicWall3D} from "./ThreeD/PicWall3D";
+import {Menu3D1} from "./ThreeD/Menu3D1"
 import init from "./ThreeD/Img3D/3d-pic";
 
 /**
@@ -55,6 +56,7 @@ Abstruse.PicWall3D = PicWall3D;
 /** The most recent blended color.See {@link init} */
 
 Abstruse.init3dPic = init;
+Abstruse.Menu3D1 = Menu3D1;
 
 
 Abstruse.yunanMapData = yunanMapData;

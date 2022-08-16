@@ -7,6 +7,7 @@
                     <div class="btns" @click="changeRoute(2)">EChartsMap</div>
                     <div class="btns" @click="changeRoute(3)">高德地图</div>
                     <div class="btns" @click="changeRoute(4)">3DMenu</div>
+                    <div class="btns" @click="changeRoute('4_1')">3DMenu_1</div>
                     <div class="btns" @click="changeRoute(6)">3DIMG</div>
                     <div class="btns" @click="changeRoute(7)">sounds</div>
                 </div>
@@ -26,6 +27,10 @@
 
                 <div v-if="route == 4" class="rightMain">
                     <Menu3DV></Menu3DV>
+                </div>
+
+                <div v-if="route == '4_1'" class="rightMain">
+                    <Menu3DV1></Menu3DV1>
                 </div>
 
                 <div v-if="route == 6" class="rightMain ">
@@ -48,15 +53,16 @@ import EchartExamples from "./views/EchartExamples";
 import EchartMap from "./views/EchartMap";
 import GaodeMap from "./views/GaodeMap";
 import Menu3DV from "./views/Menu3DV"
+import Menu3DV1 from "./views/Menu3DV1";
 import Sounds from "./views/Sounds";
 
 export default {
     components: {
-        Sounds, PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV,
+        Sounds, PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV,Menu3DV1
     },
     data: function () {
         return {
-            route: 7,
+            route: "4_1",
         }
     },
     watch: {
