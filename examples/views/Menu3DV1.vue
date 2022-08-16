@@ -20,14 +20,14 @@ export default {
             const dom = document.getElementById('D3Container')
 
             const menuData = [
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
-                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
+                {assert: '蓝底.png', routerAdress: 1},
+                {assert: '黄底.png', routerAdress: 2},
+                {assert: '蓝底.png', routerAdress: 3},
+                {assert: '黄底.png', routerAdress: 4},
+                {assert: '蓝底.png', routerAdress: 5},
+                {assert: '黄底.png', routerAdress: 6},
+                {assert: '蓝底.png', routerAdress: 7},
+                {assert: '黄底.png', routerAdress: 8},
             ]
 
             this.menu3D = new Abstruse.Menu3D1(dom)
@@ -35,7 +35,7 @@ export default {
 
             this.menu3D.eventBus.addEventListener('jumpRoute', function (data) {
                 console.log(data.message, 'data.messagedata.messagedata.messagedata.message')
-                self.$router.push(data.message)
+                self.menu3D.moveTo(data.message)
             })
         },
     },

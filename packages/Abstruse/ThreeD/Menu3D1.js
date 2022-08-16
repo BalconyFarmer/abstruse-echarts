@@ -40,7 +40,7 @@ export class Menu3D1 {
         const geometry = new THREE.BoxGeometry(10, 10, 10);
         const material = new THREE.MeshBasicMaterial({color: 0xffff00});
         const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.set(100, 100, 100)
+        mesh.position.set(0, 0, 100)
         this.scene.add(mesh);
         this.mesh = mesh
     }
@@ -116,6 +116,8 @@ export class Menu3D1 {
     }
 
     startAnimation() {
+        const self = this
+
         THREE.Object3D.prototype.rotateAroundWorldAxis = function () {
             // rotate object around axis in world space (the axis passes through point)
             // axis is assumed to be normalized
@@ -131,18 +133,22 @@ export class Menu3D1 {
             }
         }();
 
+        const a = new THREE.Vector3(0, 1, 0);
+        const b = new THREE.Vector3();
 
-        const self = this
+
+        setInterval(function () {
+            // self.camera.rotateAroundWorldAxis(b, a, 2 * Math.PI / 8)
+
+            // console.log(self.camera,"+++")
+        }, 1000)
+
 
         function animate() {
             requestAnimationFrame(animate);
             self.renderer.render(self.scene, self.camera);
 
-            const a = new THREE.Vector3(0, 1, 0);
-            const b = new THREE.Vector3();
-
-            self.mesh.rotateAroundWorldAxis(b, a, 0.001)
-            self.camera.rotateAroundWorldAxis(b, a, 0.001)
+            // self.camera.rotateAroundWorldAxis(b, a, 0.001)
             // self.camera.lookAt(self.scene.position);
 
             // if (self.animationStatus) {
@@ -191,6 +197,12 @@ export class Menu3D1 {
 
     destroy() {
 
+    }
+
+    moveTo(index) {
+        const a = new THREE.Vector3(0, 1, 0);
+        const b = new THREE.Vector3();
+        this.camera.rotateAroundWorldAxis(b, a, (2 * Math.PI / 8) * index)
     }
 
 }
