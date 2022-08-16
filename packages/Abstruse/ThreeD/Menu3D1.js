@@ -200,9 +200,26 @@ export class Menu3D1 {
     }
 
     moveTo(index) {
-        const a = new THREE.Vector3(0, 1, 0);
-        const b = new THREE.Vector3();
-        this.camera.rotateAroundWorldAxis(b, a, (2 * Math.PI / 8) * index)
+        let aim = (2 * Math.PI / 8) * index
+
+
+        const self = this
+        let i = 0
+
+        function animate() {
+            requestAnimationFrame(animate);
+            self.renderer.render(self.scene, self.camera);
+            if (i < 100) {
+                const a = new THREE.Vector3(0, 1, 0);
+                const b = new THREE.Vector3();
+                self.camera.rotateAroundWorldAxis(b, a, aim / 100)
+                i++
+                self.renderer.render(self.scene, self.camera);
+            }
+        }
+
+        animate();
+
     }
 
 }
