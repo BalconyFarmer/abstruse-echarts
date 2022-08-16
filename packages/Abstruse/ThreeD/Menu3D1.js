@@ -15,7 +15,7 @@ export class Menu3D1 {
         this.scene = null
         this.camera = null
         this.renderer = null
-
+        this.currentIndex = 1
         this.eventBus = new THREE.EventDispatcher(); // 3D事件中心
     }
 
@@ -32,7 +32,7 @@ export class Menu3D1 {
     initThree() {
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(50, this.width / this.height, 0.1, 10000);
-        this.camera.position.set(695.1800453615817, 254.22151866633237, 838.3403209458872)
+        this.camera.position.set(500, 254.22151866633237, 0)
         this.camera.lookAt(this.scene.position)
         this.renderer = new THREE.WebGLRenderer({canvas: this.dom, alpha: true});
         this.renderer.setSize(this.width, this.height);
@@ -200,7 +200,9 @@ export class Menu3D1 {
     }
 
     moveTo(index) {
-        let aim = (2 * Math.PI / 8) * index
+        console.log(this.currentIndex,"this.currentIndex")
+        console.log(index,"index")
+        let aim = (2 * Math.PI / 8) * (index - this.currentIndex)
 
 
         const self = this
@@ -219,6 +221,7 @@ export class Menu3D1 {
         }
 
         animate();
+        this.currentIndex = index
 
     }
 
