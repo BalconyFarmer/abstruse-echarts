@@ -31,11 +31,21 @@ export class Menu3D1 {
 
     initThree() {
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(15, this.width / this.height, 0.1, 10000);
+        this.camera = new THREE.PerspectiveCamera(50, this.width / this.height, 0.1, 10000);
         this.camera.position.set(695.1800453615817, 254.22151866633237, 838.3403209458872)
         this.camera.lookAt(this.scene.position)
         this.renderer = new THREE.WebGLRenderer({canvas: this.dom, alpha: true});
         this.renderer.setSize(this.width, this.height);
+
+        const helper = new THREE.CameraHelper(this.camera);
+        this.scene.add(helper);
+
+        const geometry = new THREE.BoxGeometry(10, 10, 10);
+        const material = new THREE.MeshBasicMaterial({color: 0xffff00});
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(100, 100, 100)
+        this.scene.add(mesh);
+        this.mesh = mesh
     }
 
     addPictures() {
@@ -109,11 +119,38 @@ export class Menu3D1 {
     }
 
     startAnimation() {
+        THREE.Object3D.prototype.rotateAroundWorldAxis = function () {
+            // rotate object around axis in world space (the axis passes through point)
+            // axis is assumed to be normalized
+            // assumes object does not have a rotated parent
+            var q = new THREE.Quaternion();
+            return function rotateAroundWorldAxis(point, axis, angle) {
+                q.setFromAxisAngle(axis, angle);
+                this.applyQuaternion(q);
+                this.position.sub(point);
+                this.position.applyQuaternion(q);
+                this.position.add(point);
+                return this;
+            }
+        }();
+
+
         const self = this
 
         function animate() {
             requestAnimationFrame(animate);
             self.renderer.render(self.scene, self.camera);
+
+            const a = new THREE.Vector3(0, 1, 0);
+            //no arguments; will be initialised to (0, 0, 0)
+            const b = new THREE.Vector3();
+            const d = b.distanceTo(a.normalize());
+
+            // self.mesh.rotateOnWorldAxis(a, 0.01)
+
+            self.mesh.rotateAroundWorldAxis(b, a, 0.009)
+            // self.camera.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), 0.01)
+            // self.camera.lookAt(self.scene.position);
 
             // if (self.animationStatus) {
             //     self.munus.forEach(item => {
@@ -127,11 +164,13 @@ export class Menu3D1 {
         animate();
     }
 
+
     /**
      * 开启鼠标控制
      */
     startControl() {
         this.controller = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controller.autoRotate = true
     }
 
     /**

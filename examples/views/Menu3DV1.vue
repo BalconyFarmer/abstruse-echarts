@@ -26,6 +26,8 @@ export default {
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
                 {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
+                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
+                {assert: '党员教育0.png', routerAdress: "/PartyMemberPortrait"},
             ]
 
             this.menu3D = new Abstruse.Menu3D1(dom)
