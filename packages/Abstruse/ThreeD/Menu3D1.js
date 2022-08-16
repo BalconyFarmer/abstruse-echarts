@@ -37,9 +37,6 @@ export class Menu3D1 {
         this.renderer = new THREE.WebGLRenderer({canvas: this.dom, alpha: true});
         this.renderer.setSize(this.width, this.height);
 
-        const helper = new THREE.CameraHelper(this.camera);
-        this.scene.add(helper);
-
         const geometry = new THREE.BoxGeometry(10, 10, 10);
         const material = new THREE.MeshBasicMaterial({color: 0xffff00});
         const mesh = new THREE.Mesh(geometry, material);
@@ -142,14 +139,10 @@ export class Menu3D1 {
             self.renderer.render(self.scene, self.camera);
 
             const a = new THREE.Vector3(0, 1, 0);
-            //no arguments; will be initialised to (0, 0, 0)
             const b = new THREE.Vector3();
-            const d = b.distanceTo(a.normalize());
 
-            // self.mesh.rotateOnWorldAxis(a, 0.01)
-
-            self.mesh.rotateAroundWorldAxis(b, a, 0.009)
-            // self.camera.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), 0.01)
+            self.mesh.rotateAroundWorldAxis(b, a, 0.001)
+            self.camera.rotateAroundWorldAxis(b, a, 0.001)
             // self.camera.lookAt(self.scene.position);
 
             // if (self.animationStatus) {
