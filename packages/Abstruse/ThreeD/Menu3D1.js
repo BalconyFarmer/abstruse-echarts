@@ -38,6 +38,8 @@ export class Menu3D1 {
         this.camera.lookAt(this.scene.position)
         this.renderer = new THREE.WebGLRenderer({canvas: this.dom, alpha: true});
         this.renderer.setSize(this.width, this.height);
+        const light = new THREE.AmbientLight( 0xffffff ); // soft white light
+        this.scene.add( light );
     }
 
     addPictures() {
@@ -71,7 +73,7 @@ export class Menu3D1 {
         // const point3 = new THREE.Vector3(17, 88, 79)
         const flowPipes = [point0, point1]
         const flowPipe = new FlowPipe(this, flowPipes)
-        flowPipe.creat()
+        // flowPipe.creat()
 
     }
 

@@ -11,6 +11,7 @@ export class FlowPipe {
         this.direction = true
         // 点位
         this.linePoints = linePoints || [new THREE.Vector3(0, 0, 0), new THREE.Vector3(100, 100, 100), new THREE.Vector3(100, 100, 0), new THREE.Vector3(200, 200, 200)]
+        this.test()
     }
 
     creat() {
@@ -55,5 +56,48 @@ export class FlowPipe {
                 }
             }
         )
+    }
+
+    test() {
+        const self = this
+        let textureTest = new THREE.TextureLoader().load(serverAdress + '/3Dstatic/model3D/run.png'); // 流动材质 找一个酷炫点的图~
+
+        // 流动线
+        let arr = [[[0, 0, 0], [0, 0, 190]]];
+
+        setCurve(arr, 5, textureTest);
+
+        function setCurve(arr, radius = 3, texture = textureTest) {
+            let curveObj = {}, points;
+            let tubeMaterial, tubeGeometry, tubeArr = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                points = [];
+                for (let j = 0; j < arr[i].length; j++) {
+                    points.push(new THREE.Vector3(arr[i][j][0], arr[i][j][1], arr[i][j][2]));
+                }
+                let curve = curveObj['curve-' + i];
+                curve = new THREE.CatmullRomCurve3(points, false); /* 是否闭合 */
+                tubeGeometry = new THREE.TubeGeometry(curve, 10, radius, 3, false); // path, tubularSegments, radius, radiusSegments, closed
+
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                tubeMaterial = new THREE.MeshPhongMaterial({
+                    map: texture,
+                    transparent: true
+                });
+
+                tubeArr[i] = new THREE.Mesh(tubeGeometry, tubeMaterial);
+            }
+
+            self.app.scene.add(...tubeArr);
+        }
+
+        render();
+
+        function render() {
+            textureTest.offset.x -= 0.006; // 设置偏移
+            requestAnimationFrame(render);
+        }
     }
 }
