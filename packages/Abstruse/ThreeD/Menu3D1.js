@@ -10,7 +10,7 @@ export class Menu3D1 {
         this.munus = []
         this.width = this.dom.width
         this.height = this.dom.height
-        this.scale = 8 // icon大小系数
+        this.scale = 3 // icon大小系数
         this.animationStatus = true
 
         this.scene = null
@@ -57,7 +57,7 @@ export class Menu3D1 {
                 const material1 = new THREE.SpriteMaterial({map: tex});
                 const sprite = new THREE.Sprite(material1);
 
-                sprite.scale.set(298 / self.scale, 467 / self.scale, 1)
+                sprite.scale.set(161 / self.scale, 188 / self.scale, 1)
                 sprite.position.set(200, 0, 0);
 
                 let gre = 2 * Math.PI / self.menuData.length
