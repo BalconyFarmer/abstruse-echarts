@@ -185,9 +185,25 @@ export class Menu3D1 {
     }
 
     moveTo(index) {
-        console.log(this.currentIndex, "this.currentIndex")
-        console.log(index, "index")
-        let aim = (2 * Math.PI / 8) * (index - this.currentIndex)
+        let _data = index - this.currentIndex
+        let data = Math.abs(index - this.currentIndex);
+        if (data > 4) {
+            if (_data > 0) {
+                data = -(8 - data)
+            } else {
+                data = 8 - data
+            }
+        } else {
+            data = index - this.currentIndex
+        }
+
+        console.log(index)
+        console.log(this.currentIndex)
+        console.log(data)
+        console.log("======================================")
+
+
+        let aim = (2 * Math.PI / 8) * data
         const self = this
         let i = 0
 
