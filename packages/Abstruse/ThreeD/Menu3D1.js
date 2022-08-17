@@ -185,42 +185,45 @@ export class Menu3D1 {
     }
 
     moveTo(index) {
-        let _data = index - this.currentIndex
-        let data = Math.abs(index - this.currentIndex);
-        if (data > 4) {
-            if (_data > 0) {
-                data = -(8 - data)
+        if (index) {
+            let _data = index - this.currentIndex
+            let data = Math.abs(index - this.currentIndex);
+            if (data >= 4) {
+                if (_data > 0) {
+                    data = -(8 - data)
+                } else {
+                    data = 8 - data
+                }
             } else {
-                data = 8 - data
+                data = index - this.currentIndex
             }
-        } else {
-            data = index - this.currentIndex
-        }
 
-        console.log(index)
-        console.log(this.currentIndex)
-        console.log(data)
-        console.log("======================================")
+            console.log(index)
+            console.log(this.currentIndex)
+            console.log(data)
+            console.log("======================================")
 
 
-        let aim = (2 * Math.PI / 8) * data
-        const self = this
-        let i = 0
+            let aim = (2 * Math.PI / 8) * data
+            const self = this
+            let i = 0
 
-        function animate() {
-            requestAnimationFrame(animate);
-            self.renderer.render(self.scene, self.camera);
-            if (i < 100) {
-                const a = new THREE.Vector3(0, 1, 0);
-                const b = new THREE.Vector3();
-                self.camera.rotateAroundWorldAxis(b, a, aim / 100)
-                i++
+            function animate() {
+                requestAnimationFrame(animate);
                 self.renderer.render(self.scene, self.camera);
+                if (i < 100) {
+                    const a = new THREE.Vector3(0, 1, 0);
+                    const b = new THREE.Vector3();
+                    self.camera.rotateAroundWorldAxis(b, a, aim / 100)
+                    i++
+                    self.renderer.render(self.scene, self.camera);
+                }
             }
+
+            animate();
+            this.currentIndex = index
         }
 
-        animate();
-        this.currentIndex = index
 
     }
 
