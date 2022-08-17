@@ -27,7 +27,7 @@ export class Menu3D1 {
         this.addPictures();
         this.addMouseEvent();
         this.startAnimation();
-        this.startControl();
+        // this.startControl();
         // this.axesHelper();
         this.addFlowLine()
     }
@@ -70,6 +70,18 @@ export class Menu3D1 {
                 sprite.routerAdress = item.routerAdress
             })
 
+        })
+
+        // 同一平台logo
+        var loader = new THREE.TextureLoader();
+        loader.load(require('./imgs/result/baseLogo.png'), function (tex) {
+            const material1 = new THREE.SpriteMaterial({map: tex});
+            const sprite = new THREE.Sprite(material1);
+            sprite.scale.set(150, 150, 150)
+            sprite.position.set(0, 0, 0);
+            self.scene.add(sprite);
+            self.munus.push(sprite)
+            sprite.routerAdress = item.routerAdress
         })
 
 
