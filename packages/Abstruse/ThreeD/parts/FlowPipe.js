@@ -63,7 +63,7 @@ export class FlowPipe {
         let textureTest = new THREE.TextureLoader().load(serverAdress + '/3Dstatic/model3D/run.png'); // 流动材质 找一个酷炫点的图~
 
         // 流动线
-        let arr = [[[0, 0, 0], [0, 0, 190]]];
+        let arr = [[[0, 0, 30], [0, 0, 190]]];
 
         setCurve(arr, 1, textureTest);
 
