@@ -20,14 +20,14 @@ export default {
             const dom = document.getElementById('D3Container')
 
             const menuData = [
-                {assert: '党员教育.png', routerAdress: 1},
-                {assert: '黄底.png', routerAdress: 2},
-                {assert: '蓝底.png', routerAdress: 3},
-                {assert: '黄底.png', routerAdress: 4},
-                {assert: '蓝底.png', routerAdress: 5},
-                {assert: '黄底.png', routerAdress: 6},
-                {assert: '蓝底.png', routerAdress: 7},
-                {assert: '黄底.png', routerAdress: 8},
+                {assert: '1.png', routerAdress: 1},
+                {assert: '2.png', routerAdress: 2},
+                {assert: '3.png', routerAdress: 3},
+                {assert: '4.png', routerAdress: 4},
+                {assert: '5.png', routerAdress: 5},
+                {assert: '6.png', routerAdress: 6},
+                {assert: '7.png', routerAdress: 7},
+                {assert: '8.png', routerAdress: 8},
             ]
 
             this.menu3D = new Abstruse.Menu3D1(dom)
