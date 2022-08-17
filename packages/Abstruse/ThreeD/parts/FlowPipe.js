@@ -7,7 +7,7 @@ export class FlowPipe {
         this.app = app;
         this.mesh;
         this.texture;
-        this.redius = 1 // 半径
+        this.redius = 5 // 半径
         this.direction = true
         // 点位
         this.linePoints = linePoints || [new THREE.Vector3(0, 0, 0), new THREE.Vector3(100, 100, 100), new THREE.Vector3(100, 100, 0), new THREE.Vector3(200, 200, 200)]

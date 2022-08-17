@@ -38,13 +38,6 @@ export class Menu3D1 {
         this.camera.lookAt(this.scene.position)
         this.renderer = new THREE.WebGLRenderer({canvas: this.dom, alpha: true});
         this.renderer.setSize(this.width, this.height);
-
-        const geometry = new THREE.BoxGeometry(10, 10, 10);
-        const material = new THREE.MeshBasicMaterial({color: 0xffff00});
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.set(0, 0, 100)
-        this.scene.add(mesh);
-        this.mesh = mesh
     }
 
     addPictures() {
@@ -73,7 +66,7 @@ export class Menu3D1 {
         })
 
         const point0 = new THREE.Vector3(0, 0, 0)
-        const point1 = new THREE.Vector3(0, 0, 100)
+        const point1 = new THREE.Vector3(0, 0, 190)
         // const point2 = new THREE.Vector3(-35, 96, 106)
         // const point3 = new THREE.Vector3(17, 88, 79)
         const flowPipes = [point0, point1]
@@ -113,10 +106,8 @@ export class Menu3D1 {
             // 计算物体和射线的焦点
             intersects = raycaster.intersectObjects(self.scene.children);
             if (intersects.length > 0) {
-
                 self.animationStatus = false
                 const point = intersects[0].point
-                // self.addTestCube(point)
             } else {
                 self.animationStatus = true
             }
@@ -130,9 +121,6 @@ export class Menu3D1 {
         const self = this
 
         THREE.Object3D.prototype.rotateAroundWorldAxis = function () {
-            // rotate object around axis in world space (the axis passes through point)
-            // axis is assumed to be normalized
-            // assumes object does not have a rotated parent
             var q = new THREE.Quaternion();
             return function rotateAroundWorldAxis(point, axis, angle) {
                 q.setFromAxisAngle(axis, angle);
@@ -146,14 +134,6 @@ export class Menu3D1 {
 
         const a = new THREE.Vector3(0, 1, 0);
         const b = new THREE.Vector3();
-
-
-        setInterval(function () {
-            // self.camera.rotateAroundWorldAxis(b, a, 2 * Math.PI / 8)
-
-            // console.log(self.camera,"+++")
-        }, 1000)
-
 
         function animate() {
             requestAnimationFrame(animate);
@@ -196,16 +176,6 @@ export class Menu3D1 {
         this.scene.add(axesHelper);
     }
 
-    addTestCube(position) {
-        // const see = position
-        // debugger
-        const geometry = new THREE.BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial({color: 0xffffff});
-        const cube = new THREE.Mesh(geometry, material);
-        cube.position.set(position.x, position.y, position.z)
-        this.scene.add(cube);
-    }
-
     addSprit() {
 
     }
@@ -218,8 +188,6 @@ export class Menu3D1 {
         console.log(this.currentIndex, "this.currentIndex")
         console.log(index, "index")
         let aim = (2 * Math.PI / 8) * (index - this.currentIndex)
-
-
         const self = this
         let i = 0
 
