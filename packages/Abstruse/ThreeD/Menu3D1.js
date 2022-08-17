@@ -1,5 +1,6 @@
 import * as THREE from "three"   //ES6
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import {FlowPipe} from "./parts/FlowPipe";
 
 export class Menu3D1 {
 
@@ -17,6 +18,7 @@ export class Menu3D1 {
         this.renderer = null
         this.currentIndex = 1
         this.eventBus = new THREE.EventDispatcher(); // 3D事件中心
+        this.renderQueue = []
     }
 
     init3D(menuData) {
@@ -69,6 +71,15 @@ export class Menu3D1 {
             })
 
         })
+
+        const point0 = new THREE.Vector3(0, 0, 0)
+        const point1 = new THREE.Vector3(0, 0, 100)
+        // const point2 = new THREE.Vector3(-35, 96, 106)
+        // const point3 = new THREE.Vector3(17, 88, 79)
+        const flowPipes = [point0, point1]
+        const flowPipe = new FlowPipe(this, flowPipes)
+        flowPipe.creat()
+
     }
 
     addMouseEvent() {
@@ -148,6 +159,10 @@ export class Menu3D1 {
             requestAnimationFrame(animate);
             self.renderer.render(self.scene, self.camera);
 
+            self.renderQueue.forEach(item => {
+                item()
+            })
+
             // self.camera.rotateAroundWorldAxis(b, a, 0.001)
             // self.camera.lookAt(self.scene.position);
 
@@ -200,8 +215,8 @@ export class Menu3D1 {
     }
 
     moveTo(index) {
-        console.log(this.currentIndex,"this.currentIndex")
-        console.log(index,"index")
+        console.log(this.currentIndex, "this.currentIndex")
+        console.log(index, "index")
         let aim = (2 * Math.PI / 8) * (index - this.currentIndex)
 
 
