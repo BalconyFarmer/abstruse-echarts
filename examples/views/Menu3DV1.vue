@@ -53,7 +53,6 @@ export default {
     background: url("./img/baseMap.png") center no-repeat;
     background-size: 40% 40%;
     background-position: center 55%;
-    border: 1px solid yellow;
 }
 
 .all_3DMenu {
