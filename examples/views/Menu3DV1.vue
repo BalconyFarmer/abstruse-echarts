@@ -46,6 +46,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.all_3DMenu {
+    margin: 0;
+    overflow: hidden;
+    background: url("./img/baseMap.png") center no-repeat;
+    background-size: 40% 40%;
+    background-position: center 55%;
+    border: 1px solid yellow;
+}
+
 .all_3DMenu {
     width: 100%;
     height: 100%;
