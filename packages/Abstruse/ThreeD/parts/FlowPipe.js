@@ -65,7 +65,7 @@ export class FlowPipe {
         // 流动线
         let arr = [[[0, 0, 0], [0, 0, 190]]];
 
-        setCurve(arr, 5, textureTest);
+        setCurve(arr, 1, textureTest);
 
         function setCurve(arr, radius = 3, texture = textureTest) {
             let curveObj = {}, points;
