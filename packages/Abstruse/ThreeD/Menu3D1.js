@@ -29,7 +29,6 @@ export class Menu3D1 {
         this.startAnimation();
         // this.startControl();
         // this.axesHelper();
-        this.addFlowLine()
     }
 
     initThree() {
@@ -68,33 +67,26 @@ export class Menu3D1 {
                 self.scene.add(sprite);
                 self.munus.push(sprite)
                 sprite.routerAdress = item.routerAdress
+
+                let direction = ((index % 2) == 0)
+                console.log(direction, "___________")
+
+                self.addFlowLine([[0, 0, 0], [sprite.position.x, sprite.position.y, sprite.position.z,]], direction)
+
             })
 
+
         })
-
-        // 同一平台logo
-        var loader = new THREE.TextureLoader();
-        loader.load(require('./imgs/result/baseLogo.png'), function (tex) {
-            const material1 = new THREE.SpriteMaterial({map: tex});
-            const sprite = new THREE.Sprite(material1);
-            sprite.scale.set(150, 150, 150)
-            sprite.position.set(0, 0, 0);
-            self.scene.add(sprite);
-            self.munus.push(sprite)
-            sprite.routerAdress = item.routerAdress
-        })
-
-
     }
 
-    addFlowLine() {
+    addFlowLine(data, direction) {
         const point0 = new THREE.Vector3(0, 0, 0)
         const point1 = new THREE.Vector3(0, 0, 190)
         // const point2 = new THREE.Vector3(-35, 96, 106)
         // const point3 = new THREE.Vector3(17, 88, 79)
         const flowPipes = [point0, point1]
         const flowPipe = new FlowPipe(this, flowPipes)
-        // flowPipe.creat()
+        flowPipe.add(data, direction)
     }
 
     addMouseEvent() {

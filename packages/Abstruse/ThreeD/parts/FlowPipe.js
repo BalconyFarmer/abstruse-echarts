@@ -11,7 +11,6 @@ export class FlowPipe {
         this.direction = true
         // 点位
         this.linePoints = linePoints || [new THREE.Vector3(0, 0, 0), new THREE.Vector3(100, 100, 100), new THREE.Vector3(100, 100, 0), new THREE.Vector3(200, 200, 200)]
-        this.test()
     }
 
     creat() {
@@ -58,16 +57,16 @@ export class FlowPipe {
         )
     }
 
-    test() {
+    add(data, direction) {
         const self = this
         let textureTest = new THREE.TextureLoader().load(serverAdress + '/3Dstatic/model3D/run.png'); // 流动材质 找一个酷炫点的图~
 
         // 流动线
-        let arr = [[[0, 0, 30], [0, 0, 190]]];
+        let arr = [data];
 
-        setCurve(arr, 1, textureTest);
+        setCurve(arr, 0.5, textureTest);
 
-        function setCurve(arr, radius = 3, texture = textureTest) {
+        function setCurve(arr, radius, texture = textureTest) {
             let curveObj = {}, points;
             let tubeMaterial, tubeGeometry, tubeArr = [];
 
@@ -78,10 +77,11 @@ export class FlowPipe {
                 }
                 let curve = curveObj['curve-' + i];
                 curve = new THREE.CatmullRomCurve3(points, false); /* 是否闭合 */
-                tubeGeometry = new THREE.TubeGeometry(curve, 10, radius, 3, false); // path, tubularSegments, radius, radiusSegments, closed
+                tubeGeometry = new THREE.TubeGeometry(curve, 1, radius, 300, false); // path, tubularSegments, radius, radiusSegments, closed
 
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.set(20, 1);
                 tubeMaterial = new THREE.MeshPhongMaterial({
                     map: texture,
                     transparent: true
@@ -96,7 +96,11 @@ export class FlowPipe {
         render();
 
         function render() {
-            textureTest.offset.x -= 0.006; // 设置偏移
+            if (direction) {
+                textureTest.offset.x -= 0.006; // 设置偏移
+            } else {
+                textureTest.offset.x += 0.006; // 设置偏移
+            }
             requestAnimationFrame(render);
         }
     }
