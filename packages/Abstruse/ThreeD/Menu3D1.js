@@ -198,12 +198,6 @@ export class Menu3D1 {
                 data = index - this.currentIndex
             }
 
-            console.log(index)
-            console.log(this.currentIndex)
-            console.log(data)
-            console.log("======================================")
-
-
             let aim = (2 * Math.PI / 8) * data
             const self = this
             let i = 0
@@ -211,10 +205,10 @@ export class Menu3D1 {
             function animate() {
                 requestAnimationFrame(animate);
                 self.renderer.render(self.scene, self.camera);
-                if (i < 100) {
+                if (i < 50) {
                     const a = new THREE.Vector3(0, 1, 0);
                     const b = new THREE.Vector3();
-                    self.camera.rotateAroundWorldAxis(b, a, aim / 100)
+                    self.camera.rotateAroundWorldAxis(b, a, aim / 50)
                     i++
                     self.renderer.render(self.scene, self.camera);
                 }
