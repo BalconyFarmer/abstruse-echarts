@@ -17,6 +17,7 @@ import {yuxi} from "./mapDataForEcahrt/玉溪市.js";
 import {honghe} from "./mapDataForEcahrt/红河哈尼族彝族自治州.js";
 import {xishuangbanna} from "./mapDataForEcahrt/西双版纳傣族自治州.js";
 import {diqing} from "./mapDataForEcahrt/迪庆藏族自治州.js";
+import {lincang} from "./mapDataForEcahrt/临沧市.js";
 import {yunanMapData} from "./mapDataForEcahrt/manualYunnan";
 import bgMapPopup from "./imgs/bg_map_popup.png";
 
