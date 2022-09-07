@@ -1,45 +1,59 @@
 <template>
 
     <div class="all">
-        <div style="background-color: black;z-index: 99999;color: white;position: absolute;left: 0px;top: 0px;" v-show="toolTipShow"
+        <div style="background-color: black;z-index: 99999;color: white;position: absolute;left: 0px;top: 0px;"
+             v-show="toolTipShow"
              id="toolTip">
             <span>{{ toolTipName }}</span>
         </div>
 
         <div id="forEMap" style="width: 100%;height: 100%"></div>
         <div class="menu">
-            <div>
-                <el-button size="mini" @click="addIcons">添加图标effectScatter</el-button>
-                <el-button size="mini" @click="addIconsCustom">添加自定义图标</el-button>
-                <el-button size="mini" @click="addIconsCustomEvent">添加自定义图标事件</el-button>
-            </div>
+            <div class="menuInner">
+                <div>
+                    <el-button size="mini" @click="addIcons">添加图标effectScatter</el-button>
+                </div>
+                <div>
+                    <el-button size="mini" @click="addIconsCustom">添加自定义图标</el-button>
+                </div>
+                <div>
+                    <el-button size="mini" @click="addIconsCustomEvent">添加自定义图标事件</el-button>
+                </div>
 
-            <div>
-                <el-button size="mini" @click="addHeat">添加热力图</el-button>
-                <el-button size="mini" @click="addToolTips">添加Tooltip</el-button>
-                <el-button size="mini" @click="addMapData">添加子区域数据</el-button>
-            </div>
+                <div>
+                    <el-button size="mini" @click="addHeat">添加热力图</el-button>
 
-            <div>
-                <el-button size="mini" @click="addFlyLine">添加飞行线</el-button>
-                <el-button size="mini" @click="addAutoTooltip">添加自动ToolTip</el-button>
-            </div>
+                </div>
+                <div>
+                    <el-button size="mini" @click="addToolTips">添加Tooltip</el-button>
 
-            <div class="menuSelects">
-                <el-select
-                    @change="initEMap"
-                    v-model="value"
-                    allow-create
-                    multiple
-                    filterable
-                    placeholder="请选择文章标签">
-                    <el-option
-                        v-for="item in cityList"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                    </el-option>
-                </el-select>
+                </div>
+
+                <div>
+                    <el-button size="mini" @click="addFlyLine">添加飞行线</el-button>
+                </div>
+                <div>
+                    <el-button size="mini" @click="addAutoTooltip">添加自动ToolTip</el-button>
+                </div>
+                <div>
+                    <el-select
+                        size="mini"
+                        @change="initEMap"
+                        v-model="value"
+                        allow-create
+                        multiple
+                        filterable
+                        placeholder="请选择文章标签">
+                        <el-option
+                            v-for="item in cityList"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                        </el-option>
+                    </el-select>
+                </div>
+
+
             </div>
 
         </div>
@@ -90,14 +104,6 @@ export default {
             ]
             this.objEmap.addHeatMapEffect(data1)
         },
-        addMapData() {
-            const data1 = [
-                {name: '昆明市', value: 10},
-                {name: '玉溪市', value: 100},
-                {name: '普洱市', value: 1000},
-            ]
-            this.objEmap.addMapData(data1)
-        },
         addFlyLine() {
             this.objEmap.addFlyLine()
         },
@@ -130,7 +136,7 @@ export default {
             const self = this
             this.objEmap.addMouseOverEvent()
             this.objEmap.eventBus.addEventListener("mouseover", function (event) {
-                console.log(event,'eventevent')
+                console.log(event, 'eventevent')
                 if (event.message.mouseE.seriesType == "scatter") {
                     self.toolTipShow = true;
                     const left = event.message.mouseE.event.offsetX;
@@ -140,7 +146,7 @@ export default {
                     dom.style.top = top + "px";
                     self.toolTipName = event.message.name;
                 } else {
-                    console.log(event,'eventeventevent')
+                    console.log(event, 'eventeventevent')
                 }
             });
 
@@ -172,12 +178,20 @@ export default {
         left: 0;
         top: 0;
         text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
 
-        .menuSelects {
-            position: absolute;
-            left: 0;
-            top: 200px;
+        .menuInner {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            div {
+                margin: 10px;
+            }
         }
+
     }
 }
 

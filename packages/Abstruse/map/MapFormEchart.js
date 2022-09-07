@@ -528,10 +528,6 @@ class MapFormEchart {
         this.refreshData()
     }
 
-    addMapData(data) {
-        this.option.series[0].data = data
-    }
-
     /**
      * 小图标事件
      */
