@@ -15,7 +15,7 @@
         <div class="colu">
             <div style="color: white">audio标签</div>
             <div>
-                <audio id="audioID" src="http://101.34.131.94:8081/0staticFixed/test/heni.mp3" controls></audio>
+                <audio id="audioID" src="./assets/许巍生活不止眼前的苟且.mp3" controls></audio>
             </div>
             <div>
                 <el-button @click="audioPlay">audio pLAY</el-button>
@@ -42,7 +42,8 @@ export default {
                 this.soundApp.play()
             } else {
                 this.soundApp = new Howl({
-                    src: ['http://101.34.131.94:8081/0staticFixed/test/heni.mp3'],
+                    // src: ['http://101.34.131.94:8081/0staticFixed/test/heni.mp3'],
+                    src: require("./assets/许巍生活不止眼前的苟且.mp3"),
                     autoplay: true,
                     loop: false,
                     volume: 1,
