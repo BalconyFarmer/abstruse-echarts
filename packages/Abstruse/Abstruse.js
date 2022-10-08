@@ -12,7 +12,6 @@ import {MapFromGaode} from "./map/MapFromGaode";
 import {MapFromGaodeCover} from "./map/MapFromGaodeCover"
 import {MapFormEchart} from "./map/MapFormEchart";
 import {Canvas2D} from "./ThreeD/Canvas2D";
-import {Menu3D1} from "./ThreeD/Menu3D1"
 
 /**
  * Abstruse集成类
@@ -47,7 +46,6 @@ Abstruse.Canvas2D = Canvas2D;
 /** The most recent blended color.See {@link Menu3D} */
 
 
-Abstruse.Menu3D1 = Menu3D1;
 
 
 Abstruse.yunanMapData = yunanMapData;
