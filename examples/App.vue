@@ -11,7 +11,6 @@
                 <div v-if="route == 1" class="rightMain">
                     <EchartExamples></EchartExamples>
                 </div>
-
                 <div v-if="route == 2" class="rightMain">
                     <EchartMap></EchartMap>
                 </div>
@@ -31,7 +30,7 @@ export default {
     },
     data: function () {
         return {
-            route: "4_1",
+            route: "1",
         }
     },
     watch: {
