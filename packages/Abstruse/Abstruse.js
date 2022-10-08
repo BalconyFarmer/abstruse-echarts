@@ -8,8 +8,6 @@ import {Lines} from "./echartOptions/Lines";
 import {SingleNumber} from "./echartOptions/SingleNumber";
 import {Bar} from "./echartOptions/Bar";
 import {Pie} from "./echartOptions/Pie";
-import {MapFromGaode} from "./map/MapFromGaode";
-import {MapFromGaodeCover} from "./map/MapFromGaodeCover"
 import {MapFormEchart} from "./map/MapFormEchart";
 import {Canvas2D} from "./ThreeD/Canvas2D";
 
@@ -29,24 +27,12 @@ Abstruse.Others = Others;
 /** The most recent blended color.See {@link Pie} */
 Abstruse.Pie = Pie;
 /** The most recent blended color.See {@link MapFromGaode} */
-
-Abstruse.MapFromGaode = MapFromGaode;
-/** The most recent blended color.See {@link MapFromGaodeCover} */
-
-Abstruse.MapFromGaodeCover = MapFromGaodeCover;
-/** The most recent blended color.See {@link MapFormEchart} */
-
 Abstruse.MapFormEchart = MapFormEchart;
 /** The most recent blended color.See {@link SingleNumber} */
-
 Abstruse.SingleNumber = SingleNumber;
 /** The most recent blended color.See {@link Canvas2D} */
-
 Abstruse.Canvas2D = Canvas2D;
 /** The most recent blended color.See {@link Menu3D} */
-
-
-
 
 Abstruse.yunanMapData = yunanMapData;
 export {Abstruse};
