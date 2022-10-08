@@ -13,7 +13,6 @@ import {MapFromGaodeCover} from "./map/MapFromGaodeCover"
 import {MapFormEchart} from "./map/MapFormEchart";
 import {Canvas2D} from "./ThreeD/Canvas2D";
 import {Menu3D1} from "./ThreeD/Menu3D1"
-import init from "./ThreeD/Img3D/3d-pic";
 
 /**
  * Abstruse集成类
@@ -48,7 +47,6 @@ Abstruse.Canvas2D = Canvas2D;
 /** The most recent blended color.See {@link Menu3D} */
 
 
-Abstruse.init3dPic = init;
 Abstruse.Menu3D1 = Menu3D1;
 
 
