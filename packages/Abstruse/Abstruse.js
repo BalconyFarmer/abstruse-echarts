@@ -9,7 +9,6 @@ import {SingleNumber} from "./echartOptions/SingleNumber";
 import {Bar} from "./echartOptions/Bar";
 import {Pie} from "./echartOptions/Pie";
 import {MapFormEchart} from "./map/MapFormEchart";
-import {Canvas2D} from "./ThreeD/Canvas2D";
 
 /**
  * Abstruse集成类
@@ -30,8 +29,6 @@ Abstruse.Pie = Pie;
 Abstruse.MapFormEchart = MapFormEchart;
 /** The most recent blended color.See {@link SingleNumber} */
 Abstruse.SingleNumber = SingleNumber;
-/** The most recent blended color.See {@link Canvas2D} */
-Abstruse.Canvas2D = Canvas2D;
 /** The most recent blended color.See {@link Menu3D} */
 
 Abstruse.yunanMapData = yunanMapData;

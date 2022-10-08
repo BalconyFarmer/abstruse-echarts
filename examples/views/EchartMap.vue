@@ -1,15 +1,30 @@
 <template>
-
     <div class="all">
         <div style="background-color: black;z-index: 99999;color: white;position: absolute;left: 0px;top: 0px;"
              v-show="toolTipShow"
              id="toolTip">
             <span>{{ toolTipName }}</span>
         </div>
-
         <div id="forEMap" style="width: 100%;height: 100%"></div>
         <div class="menu">
             <div class="menuInner">
+                <div>
+                    <el-select
+                        size="mini"
+                        @change="initEMap"
+                        v-model="value"
+                        allow-create
+                        multiple
+                        filterable
+                        placeholder="请选择文章标签">
+                        <el-option
+                            v-for="item in cityList"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                        </el-option>
+                    </el-select>
+                </div>
                 <div>
                     <el-button size="mini" @click="addIcons">添加图标effectScatter</el-button>
                 </div>
@@ -35,27 +50,7 @@
                 <div>
                     <el-button size="mini" @click="addAutoTooltip">添加自动ToolTip</el-button>
                 </div>
-                <div>
-                    <el-select
-                        size="mini"
-                        @change="initEMap"
-                        v-model="value"
-                        allow-create
-                        multiple
-                        filterable
-                        placeholder="请选择文章标签">
-                        <el-option
-                            v-for="item in cityList"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
-                </div>
-
-
             </div>
-
         </div>
     </div>
 </template>
@@ -70,16 +65,76 @@ export default {
         return {
             toolTipShow: false,
             toolTipName: '暂无数据',
-            cityList: [{
-                value: '云南省',
-                label: '云南省(功能演示地区)'
-            }, {
-                value: '昆明市',
-                label: '昆明市'
-            }, {
-                value: '临沧市',
-                label: '临沧市'
-            }],
+            cityList: [
+                {
+                    value: '云南省',
+                    label: '云南省(功能演示地区)'
+                },
+                {
+                    value: '昆明市',
+                    label: '昆明市'
+                },
+                {
+                    value: '临沧市',
+                    label: '临沧市'
+                },
+                {
+                    value: '广灵县',
+                    label: '广灵县'
+                },
+                {
+                    value: '丽江市',
+                    label: '丽江市'
+                },
+                {
+                    value: '保山市',
+                    label: '保山市'
+                },
+                {
+                    value: '大理白族自治州',
+                    label: '大理白族自治州'
+                },
+                {
+                    value: '德宏傣族景颇族自治州',
+                    label: '德宏傣族景颇族自治州'
+                },
+                {
+                    value: '怒江傈僳族自治州',
+                    label: '怒江傈僳族自治州'
+                },
+                {
+                    value: '文山壮族苗族自治州',
+                    label: '文山壮族苗族自治州'
+                },
+                {
+                    value: '昭通市',
+                    label: '昭通市'
+                },
+                {
+                    value: '普洱市',
+                    label: '普洱市'
+                },
+                {
+                    value: '曲靖市',
+                    label: '曲靖市'
+                },
+                {
+                    value: '楚雄彝族自治州',
+                    label: '楚雄彝族自治州'
+                },
+                {
+                    value: '玉溪市',
+                    label: '玉溪市'
+                },
+                {
+                    value: '红河哈尼族彝族自治州',
+                    label: '红河哈尼族彝族自治州'
+                },
+                {
+                    value: '迪庆藏族自治州',
+                    label: '迪庆藏族自治州'
+                },
+            ],
             value: '',
 
         }
