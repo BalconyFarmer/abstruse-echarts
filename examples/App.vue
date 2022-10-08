@@ -6,7 +6,6 @@
                     <div class="btns" @click="changeRoute(1)">ECharts</div>
                     <div class="btns" @click="changeRoute(2)">EChartsMap</div>
                     <div class="btns" @click="changeRoute(3)">高德地图</div>
-                    <div class="btns" @click="changeRoute(4)">3DMenu</div>
                     <div class="btns" @click="changeRoute('4_1')">3DMenu_1</div>
                     <div class="btns" @click="changeRoute(6)">3DIMG</div>
                 </div>
@@ -22,10 +21,6 @@
 
                 <div v-if="route == 3" class="rightMain">
                     <GaodeMap></GaodeMap>
-                </div>
-
-                <div v-if="route == 4" class="rightMain">
-                    <Menu3DV></Menu3DV>
                 </div>
 
                 <div v-if="route == '4_1'" class="rightMain">
@@ -48,12 +43,11 @@ import PicturesWalls from './views/PicturesWalls'
 import EchartExamples from "./views/EchartExamples";
 import EchartMap from "./views/EchartMap";
 import GaodeMap from "./views/GaodeMap";
-import Menu3DV from "./views/Menu3DV"
 import Menu3DV1 from "./views/Menu3DV1";
 
 export default {
     components: {
-         PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV,Menu3DV1
+         PicturesWalls, EchartExamples, EchartMap, GaodeMap, Menu3DV1
     },
     data: function () {
         return {
