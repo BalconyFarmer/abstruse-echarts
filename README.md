@@ -6,21 +6,7 @@ node 版本 v14.15.1
 
 ### 1.封装echart组件库
 
-![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/1.png)
-
-### 2.封装echart地图
-
-### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/2.png)3.封装高德地图
-
-### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/3.png)4.threejs 3D menus
-
-### ![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/4.png)6.3D图片 (未完成) 引用他人组件
-
-![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/6.png)
-
-### 7.播放音乐组件
-
-![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/7.png)
+![](G:\0-github\abstruse-echarts\README.assets\1.png)
 
 ## 引用方式
 
