@@ -166,26 +166,83 @@ export default {
             this.objEmap.startAutoRun()
         },
         addIcons() {
-            const center = [101.323602, 25.722348];
-            const data = {
-                nocheckNum: 0,
-                offlineNum: 67,
-                onlineNum: 71,
-                totalNum: 138,
-            }
-            this.objEmap.addIconSecond(center, data)
+            let data1 = [
+                {
+                    center: [101.323602, 26.722348],
+                    showDatas: {
+                        nocheckNum: 0,
+                        offlineNum: 67,
+                        onlineNum: 71,
+                        totalNum: 138,
+                    }
+                },
+                {
+                    center: [100.323602, 26.722348],
+                    showDatas: {
+                        nocheckNum: 0,
+                        offlineNum: 67,
+                        onlineNum: 71,
+                        totalNum: 138,
+                    }
+                },
+                {
+                    center: [101.323602, 25.722348],
+                    showDatas: {
+                        nocheckNum: 0,
+                        offlineNum: 67,
+                        onlineNum: 71,
+                        totalNum: 138,
+                    }
+                },
+                {
+                    center: [101.323602, 24.722348],
+                    showDatas: {
+                        nocheckNum: 0,
+                        offlineNum: 67,
+                        onlineNum: 71,
+                        totalNum: 138,
+                    }
+                },
+            ]
+
+            data1.forEach(item => {
+                this.objEmap.addIconSecond(item.center, item.showDatas)
+
+            })
         },
         addToolTips() {
             this.objEmap.addTooltip()
 
         },
         addIconsCustom() {
-            const center = [100.08697, 23.886567]
-            const data = {
-                cameraId: "aad45bcca6ba4fd1a9fd5282d0c3e28a",
-                name: "临沧市委组织部指挥中心"
-            }
-            this.objEmap.addBJCamera(center, data)
+
+            let datas = [
+                {
+                    center: [100.08697, 23.886567],
+                    data: {
+                        cameraId: "aad45bcca6ba4fd1a9fd5282d0c3e28a",
+                        name: "临沧市委组织部指挥中心"
+                    }
+                },
+                {
+                    center: [101.08697, 23.886567],
+                    data: {
+                        cameraId: "aad45bcca6ba4fd1a9fd5282d0c3e28a",
+                        name: "临沧市委组织部指挥中心"
+                    }
+                },
+                {
+                    center: [100.08697, 24.886567],
+                    data: {
+                        cameraId: "aad45bcca6ba4fd1a9fd5282d0c3e28a",
+                        name: "临沧市委组织部指挥中心"
+                    }
+                },
+            ]
+            datas.forEach(item => {
+                this.objEmap.addBJCamera(item.center, item.data)
+
+            })
         },
         addIconsCustomEvent() {
             const self = this

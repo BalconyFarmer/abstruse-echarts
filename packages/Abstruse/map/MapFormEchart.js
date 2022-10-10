@@ -146,7 +146,7 @@ class MapFormEchart {
                 trigger: "item",
                 backgroundColor: "transparent",
                 formatter: (name) => {
-                    console.log(name,'namenamenamenamename')
+                    console.log(name, 'namenamenamenamename')
                     // const data = name.data._data;
                     // return `<div class="map-t-count">
                     //         <div class="content">${data.region_name}</div>
@@ -204,7 +204,7 @@ class MapFormEchart {
                         textStyle: {
                             color: "white",
                             fontSize: 12,
-                            backgroundColor: "#000000" // 文字背景色
+                            // backgroundColor: "#000000" // 文字背景色
                         }
                     },
                     itemStyle: {
@@ -260,9 +260,11 @@ class MapFormEchart {
     addTooltip() {
         this.option.tooltip = {
             show: true,
+            borderColor: "rgba(0, 0, 0, 0.0)",
+            padding: 0,
             backgroundColor: "rgba(255,255,255,0.0)", // 设置背景图片 rgba格式
             formatter: params => {
-                return this._xzdxMapWindInfo(11, 11, 11, 11);
+                return this._xzdxMapWindInfo(123, 444, 11, 11);
             }
         };
         this.refreshData()
@@ -466,11 +468,10 @@ class MapFormEchart {
      * tootip样式
      */
     _xzdxMapWindInfo(title, ratio, villageNum, schoolNum) {
-        return `<div style="width: 380px; background: url('${bgMapPopup}') no-repeat; background-size: 100% 100%; padding: 35px 50px; color: rgb(123,235,255); font-size: 24px; line-height: 150%; overflow: hidden;">
-                <h4 style="letter-spacing: 3px; text-align: center; padding-bottom: 8px;">${title}</h4><div style="overflow: hidden;">
-                <div><small style="color: #e2e2e2;">乡镇党校覆盖率：</small>${ratio}%</div></div>
-                <div style="float: left; width: 50%;" ><small style="color: #e2e2e2;">乡镇：</small>${villageNum}个</div>
-                <div style="float: left; width: 50%;"><small style="color: #e2e2e2;">乡镇党校：</small>${schoolNum}个</div></div>`;
+        return `<div style="width: 150px;height: 100px; background: url('${bgMapPopup}') no-repeat; background-size: 100% 100%;  font-size: 12px; color: white">
+                    <h4 style=" text-align: center;">标题:${title}</h4>
+                    <div>数据::${ratio}</div>
+                </div>`;
     }
 
     /**
@@ -590,7 +591,7 @@ class MapFormEchart {
                     padding: 0,
                     show: true,
                     formatter: params => {
-                        return this._xzdxMapWindInfo(111, 111, 111, 111);
+                        return this._xzdxMapWindInfo(123, 444, 111, 111);
                     }
                 },
                 // 自定义图片的 位置（lng, lat）
