@@ -6,7 +6,7 @@ node 版本 v14.15.1
 
 ### 1.封装echart组件库
 
-
+![image-20221010151747541](README.assets/image-20221010151747541.png)
 
 ## ![image-20221010151606037](README.assets/image-20221010151606037.png)
 
