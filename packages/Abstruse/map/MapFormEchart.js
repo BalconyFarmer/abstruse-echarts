@@ -158,7 +158,7 @@ class MapFormEchart {
             // 底层图层
             // 地理坐标系组件。地理坐标系组件用于地图的绘制，支持在地理坐标系上绘制散点图，线集。
             geo: {
-                show: true,
+                show: false,
                 map: this.name,
                 roam: false,
                 top: this.position.top, // 和下层保持一致
@@ -168,20 +168,20 @@ class MapFormEchart {
                 itemStyle: {
                     normal: {
                         borderWidth: 2,
-                        borderColor: "#a2dbf6",
-                        color: "#1b6bc2",
-                        opacity: 1,
-                        areaColor: "#1b6bc2",
+                        borderColor: "#000000",
+                        color: "#000000",
+                        opacity: 0, //0 完全隐藏,防止样式干扰
+                        areaColor: "#000000",
                         shadowBlur: 5,
-                        shadowColor: "#AFDEFA"
+                        shadowColor: "#000000"
                         // shadowOffsetX: -6,
                         // shadowOffsetY: 8
                     },
-                    emphasis: {opacity: 0.2, color: "#1e74c9"}
+                    emphasis: {opacity: 0, color: "#000000"} //0 完全隐藏,防止样式干扰
                 },
                 label: {
-                    normal: {show: true, color: "#fff"},
-                    emphasis: {show: false, color: "#fff"}
+                    normal: {show: true, color: "#000000"},
+                    emphasis: {show: false, color: "#000000"}
                 },
                 tooltip: {trigger: "none"},
                 z: 2
@@ -191,6 +191,7 @@ class MapFormEchart {
             // 系列列表。每个系列通过 type(map, scatter, bar, line, gauge, tree.....) 决定自己的图表类型
             series: [
                 {
+                    selectedMode: "false", // 是否选中某区域后,某区域变色
                     top: this.position.top,
                     left: this.position.left,
                     zoom: this.position.zoom, // 当前视角的缩放比例。
@@ -199,44 +200,44 @@ class MapFormEchart {
                     aspectScale: 1, // 这个参数用于 scale 地图的长宽比。geoBoundingRect.width / geoBoundingRect.height * aspectScale
                     roam: false, // 是否开启鼠标缩放和平移漫游。默认不开启
                     label: {
-                        show: false,
+                        show: true,
                         textStyle: {
                             color: "white",
                             fontSize: 12,
-                            backgroundColor: "" // 文字背景色
+                            backgroundColor: "#000000" // 文字背景色
                         }
                     },
-
                     itemStyle: {
                         normal: {
                             borderWidth: 2,
                             borderColor: "#a2dbf6",
-                            color: "#1b6bc2",
-                            opacity: 1,
-                            areaColor: "#1b6bc2",
+                            // color: "#0f00ff",
+                            opacity: 0.5,
+                            areaColor: "#032D5F",
                             shadowBlur: 5,
-                            shadowColor: "#AFDEFA"
-                            // shadowOffsetX: -6,
-                            // shadowOffsetY: 8
+                            shadowColor: "#f4fafd",
+                            shadowOffsetX: -6,
+                            shadowOffsetY: 8
                         },
                         // 鼠标移入时
                         emphasis: {
                             borderColor: "#ffffff",
                             borderWidth: "1",
-                            areaColor: "#99D2F2",
+                            opacity: 0.7,
+                            areaColor: "#032D5F",
                             label: {
-                                show: false,
+                                show: true,
                                 textStyle: {
-                                    color: "gray",
-                                    fontSize: 14
+                                    color: "#ffffff",
+                                    fontSize: 16
                                 }
                             }
                         },
 
                         effect: {
-                            show: true,
+                            show: false,
                             shadowBlur: 10,
-                            loop: true
+                            loop: false
                         },
 
                     },
