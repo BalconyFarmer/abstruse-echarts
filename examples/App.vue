@@ -113,7 +113,7 @@ body, html, #app {
         height: 100%;
         overflow-y: auto;
         overflow-x: auto;
-        background-color: #05114B;
+        background-color: #2B2B2B;
 
         .rightMain {
             width: 100%;
