@@ -8,17 +8,17 @@ node 版本 v14.15.1
 
 
 
-## ![image-20221010151146284](README.assets/image-20221010151146284.png)
+## ![image-20221010151606037](README.assets/image-20221010151606037.png)
 
 ### 引用方式1:直接引用
 
-![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/%E7%9B%B4%E6%8E%A5%E5%BC%95%E7%94%A8.png)
+![image-20221010151642440](README.assets/image-20221010151642440.png)
 
 
 
 ### 引用方式2:间接引用
 
-![](https://raw.githubusercontent.com/BalconyFarmer/abstruse-js/main/readmePIC/%E9%97%B4%E6%8E%A5%E5%BC%95%E7%94%A8.png)
+![image-20221010151655862](README.assets/image-20221010151655862.png)
 
 ## 参考博客地址:
 
