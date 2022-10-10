@@ -6,9 +6,9 @@ node 版本 v14.15.1
 
 ### 1.封装echart组件库
 
-![](G:\0-github\abstruse-echarts\README.assets\1.png)
 
-## 引用方式
+
+## ![image-20221010151146284](README.assets/image-20221010151146284.png)
 
 ### 引用方式1:直接引用
 
