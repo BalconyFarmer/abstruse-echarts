@@ -17,7 +17,7 @@ class Base {
      * left top right bottom
      */
     changeLegendPosition(position) {
-        switch (position){
+        switch (position) {
             case 'left':
                 this.option.legend.left = 'left'
                 this.option.legend.y = "center"
@@ -38,6 +38,18 @@ class Base {
     }
 
     /**
+     * 改变legent排布方向
+     * "row" "colum"
+     */
+    changeLegendDirect(type) {
+        if (type == "row") {
+            this.option.legend.orient = 'horizontal'
+        } else if (type == "colum") {
+            this.option.legend.orient = 'vertical'
+        }
+    }
+
+    /**
      * 渐变颜色
      * @param zero 开始的颜色
      * @param half 中间的颜色
@@ -45,26 +57,26 @@ class Base {
      * @returns {LinearGradient}
      */
     linearGradientColor(zero, half, one, type) {
-        if(type) {
+        if (type) {
             return new echarts.graphic.LinearGradient(
                 0, 0, 0, 1,
                 [
-                    { offset: 0, color: zero },
-                    { offset: 0.5, color: half },
-                    { offset: 1, color: one }
+                    {offset: 0, color: zero},
+                    {offset: 0.5, color: half},
+                    {offset: 1, color: one}
                 ]
             );
         } else {
             return new echarts.graphic.LinearGradient(
                 1, 0, 0, 0,
                 [
-                    { offset: 0, color: zero },
-                    { offset: 0.5, color: half },
-                    { offset: 1, color: one }
+                    {offset: 0, color: zero},
+                    {offset: 0.5, color: half},
+                    {offset: 1, color: one}
                 ]
             );
         }
     }
 }
 
-export { Base };
+export {Base};
