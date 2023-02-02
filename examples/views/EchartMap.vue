@@ -291,6 +291,7 @@ export default {
     height: 100%;
     position: relative;
     border: 2px solid yellow;
+    background-image: url("./img/background.png");
 
     .menu {
         position: absolute;
