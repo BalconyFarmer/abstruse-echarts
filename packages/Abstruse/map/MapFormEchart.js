@@ -212,7 +212,7 @@ class MapFormEchart {
                             borderWidth: 2,
                             borderColor: "#a2dbf6",
                             // color: "#0f00ff",
-                            opacity: 0.5,
+                            opacity: 0.1,
                             areaColor: "#032D5F",
                             shadowBlur: 5,
                             shadowColor: "#f4fafd",

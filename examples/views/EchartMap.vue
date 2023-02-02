@@ -280,10 +280,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#forEMap {
+    background-image: url("./img/yn.png");
+    background-position: 50% 47%;
+    background-repeat: no-repeat;
+    background-size: 46% 80%;
+}
 .all {
     width: 100%;
     height: 100%;
     position: relative;
+    border: 2px solid yellow;
 
     .menu {
         position: absolute;
