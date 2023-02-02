@@ -47,6 +47,10 @@
                 <div>
                     <el-button size="mini" @click="addFlyLine">添加飞行线</el-button>
                 </div>
+
+                <div>
+                    <el-button size="mini" @click="objEmap.addTrainTrack()">添加铁路线</el-button>
+                </div>
                 <div>
                     <el-button size="mini" @click="addAutoTooltip">添加自动ToolTip</el-button>
                 </div>
@@ -286,6 +290,7 @@ export default {
     background-repeat: no-repeat;
     background-size: 46% 80%;
 }
+
 .all {
     width: 100%;
     height: 100%;

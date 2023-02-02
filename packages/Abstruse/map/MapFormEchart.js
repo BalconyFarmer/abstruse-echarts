@@ -20,6 +20,7 @@ import {diqing} from "./mapDataForEcahrt/迪庆藏族自治州.js";
 import {lincang} from "./mapDataForEcahrt/临沧市.js";
 import {yunanMapData} from "./mapDataForEcahrt/manualYunnan";
 import bgMapPopup from "./imgs/bg_map_popup.png";
+import TrainPath from "./mapDataForEcahrt/TrainPath.json"
 
 export {yunanMapData};
 
@@ -306,6 +307,79 @@ class MapFormEchart {
                 ]
             }
         );
+
+        this.refreshData();
+    }
+
+    /**
+     * 添加铁路线
+     */
+    addTrainTrack() {
+        const addOne = (data) => {
+            let lineData = []
+            let _lineData = []
+            data.forEach((item, index) => {
+                if (index % 10 == 0) {
+                    _lineData.push(item)
+                }
+            })
+            _lineData.forEach((item, index) => {
+                if (_lineData[index + 1]) {
+                    lineData.push({
+                        point: ['六安', '马鞍山'],
+                        coords: [
+                            item,
+                            _lineData[index + 1],
+                        ],
+                    })
+                }
+            })
+            this.option.series.push(
+                {
+                    name: "",
+                    type: "lines",
+                    zlevel: 6,
+                    lineStyle: {
+                        type: 'solid',
+                        width: 3,
+                        opacity: 0.8,
+                        curveness: 0,
+                        orient: 'horizontal',
+                        color: "#51FA9B",
+                    },
+                    show: true,
+                    data: lineData,
+                    // tooltip: {
+                    //     position: "right",
+                    //     color: "#000",
+                    //     formatter(d) {
+                    //         console.log(d)
+                    //         return `<div style="padding: 5px 10px;"> 【${d.data.point[0]}】< ---- >【${d.data.point[1]}】</div>`;
+                    //     },
+                    // },
+                }
+            );
+        }
+        TrainPath.features.forEach(item1 => {
+            let data = item1.geometry.coordinates
+            addOne(data)
+        })
+
+        // debugger
+        // lineData.push({
+        //     point: ['六安', '马鞍山'],
+        //     coords: [
+        //         [102.706698, 25.050186],
+        //         [100.283537, 26.872341],
+        //     ],
+        // })
+        // lineData.push({
+        //     point: ['宿州', '马鞍山'],
+        //     coords: [
+        //         [102.706698, 25.050186],
+        //         [103.832121, 25.462365]
+        //     ],
+        // })
 
         this.refreshData();
     }
