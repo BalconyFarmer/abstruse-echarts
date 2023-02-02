@@ -295,7 +295,6 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
-    border: 2px solid yellow;
     background-image: url("./img/background.png");
 
     .menu {
