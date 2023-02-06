@@ -81,27 +81,64 @@ class Bar extends Base {
                     type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
                 }
             },
-            legend: {},
+            legend: {
+                x: "center",
+                bottom: 0,
+                itemHeight: 10, // w和h
+                itemWidth: 5,
+                textStyle: { // 汉字的样式
+                    lineHeight: 12,
+                    padding: [2, 0, 0, 0], // 因为汉字和图形块没有垂直居中，所以加了padding
+                    fontSize: 12,
+                    color: '#ffffff',
+                },
+                icon: 'circle', // 图形块的形状
+                left: 'center',
+                itemGap: 15,
+            },
             grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
+                left: '5%',
+                right: '0%',
+                top: '10%',
+                bottom: "30%",
+                containLabel: false
             },
             xAxis: {
                 type: 'category',
+                axisLine: { // x轴的颜色
+                    lineStyle: {
+                        color: '#DADFEA',
+                    },
+                    show: false
+                },
+                axisTick: { // x轴隐藏刻度
+                    show: false,
+                },
                 data: ['一月', '二月', '三月', '四月', '五月', '六月']
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                axisLine: { // x轴的颜色
+                    lineStyle: {
+                        color: '#ffffff',
+                    },
+                    show: false
+                },
+                splitLine: {show: false},
+                axisTick: { // x轴隐藏刻度
+                    show: false,
+                },
+                show: false,
+
             },
             series: [
                 {
-                    name: 'Direct',
+                    name: '抢劫1',
                     type: 'bar',
+                    barWidth: 15,
                     stack: 'total',
                     label: {
-                        show: true
+                        show: false
                     },
                     emphasis: {
                         focus: 'series'
@@ -109,11 +146,11 @@ class Bar extends Base {
                     data: [320, 302, 301, 334, 390, 330]
                 },
                 {
-                    name: 'Mail Ad',
+                    name: '抢劫2',
                     type: 'bar',
                     stack: 'total',
                     label: {
-                        show: true
+                        show: false
                     },
                     emphasis: {
                         focus: 'series'
@@ -121,11 +158,11 @@ class Bar extends Base {
                     data: [120, 132, 101, 134, 90, 230]
                 },
                 {
-                    name: 'Affiliate Ad',
+                    name: '抢劫3',
                     type: 'bar',
                     stack: 'total',
                     label: {
-                        show: true
+                        show: false
                     },
                     emphasis: {
                         focus: 'series'
@@ -133,11 +170,11 @@ class Bar extends Base {
                     data: [220, 182, 191, 234, 290, 330]
                 },
                 {
-                    name: 'Video Ad',
+                    name: '抢劫4',
                     type: 'bar',
                     stack: 'total',
                     label: {
-                        show: true
+                        show: false
                     },
                     emphasis: {
                         focus: 'series'
@@ -145,11 +182,11 @@ class Bar extends Base {
                     data: [150, 212, 201, 154, 190, 330]
                 },
                 {
-                    name: 'Search Engine',
+                    name: '抢劫5',
                     type: 'bar',
                     stack: 'total',
                     label: {
-                        show: true
+                        show: false
                     },
                     emphasis: {
                         focus: 'series'
