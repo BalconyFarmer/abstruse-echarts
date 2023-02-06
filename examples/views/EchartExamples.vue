@@ -24,6 +24,7 @@
             <div class="e11" id="eContainer6_double">111</div>
 
             <div class="e11" id="eContainer6_double1">111</div>
+            <div class="e11" id="eContainer6_many">111</div>
 
         </div>
         <div class="columItem">
@@ -74,6 +75,14 @@ export default {
             this.makeWordCloud()
             this.makeWordCloud1()
             this.makeGraphic()
+            this.makeBarMany()
+        },
+        makeBarMany() {
+            const a = new Abstruse.Bar()
+            const dom = document.getElementById('eContainer6_many')
+            const newChart = echarts.init(dom);
+            a.initBarMany()
+            newChart.setOption(a.option);
         },
         makeRadio1() {
             const a = new Abstruse.Radio()

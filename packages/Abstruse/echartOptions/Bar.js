@@ -72,6 +72,94 @@ class Bar extends Base {
         this.baseBarOption.series[0].data = data1;
     }
 
+    initBarMany() {
+        this.option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    // Use axis to trigger tooltip
+                    type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['一月', '二月', '三月', '四月', '五月', '六月']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: 'Direct',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [320, 302, 301, 334, 390, 330]
+                },
+                {
+                    name: 'Mail Ad',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [120, 132, 101, 134, 90, 230]
+                },
+                {
+                    name: 'Affiliate Ad',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [220, 182, 191, 234, 290, 330]
+                },
+                {
+                    name: 'Video Ad',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201, 154, 190, 330]
+                },
+                {
+                    name: 'Search Engine',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [820, 832, 901, 934, 1290, 1330]
+                }
+            ]
+        };
+    }
+
     /**
      * 交错正负轴标签
      *   ---|-----
@@ -678,14 +766,14 @@ class Bar extends Base {
     /**
      * 横向双柱
      */
-    initDoubleBarLevel(data,legend,angleAxis) {
+    initDoubleBarLevel(data, legend, angleAxis) {
         this.option = {
             title: {
                 text: ''
             },
             tooltip: {},
             legend: {
-                data:['销量',"分类1"]
+                data: ['销量', "分类1"]
             },
             xAxis: {
                 axisLine: { // x轴的颜色
@@ -695,7 +783,7 @@ class Bar extends Base {
                 },
             },
             yAxis: {
-                type:"category",
+                type: "category",
                 data: angleAxis,
                 axisLine: { // x轴的颜色
                     lineStyle: {
@@ -713,7 +801,7 @@ class Bar extends Base {
                     color: this.linearGradientColor("#DCFCAB", "#4FC4AA", "#1A4440", true),
 
                 },
-            },{
+            }, {
                 name: '分类1',
                 type: 'bar',
                 data: data[1],
