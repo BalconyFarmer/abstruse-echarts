@@ -285,10 +285,10 @@ export default {
 
 <style scoped lang="scss">
 #forEMap {
-    background-image: url("./img/yn.png");
-    background-position: 50% 47%;
-    background-repeat: no-repeat;
-    background-size: 46% 80%;
+    //background-image: url("./img/yn.png");
+    //background-position: 50% 47%;
+    //background-repeat: no-repeat;
+    //background-size: 46% 80%;
 }
 
 .all {
