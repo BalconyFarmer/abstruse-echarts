@@ -604,6 +604,31 @@ class MapFormEchart {
         this.refreshData()
     }
 
+    addHeatPoint(data) {
+        this.option.visualMap = {
+            min: 0,
+            max: 500,
+            splitNumber: 5,
+            inRange: {
+                color: ['#d94e5d', '#eac736', '#50a3ba'].reverse()
+            },
+            textStyle: {
+                color: '#fff'
+            }
+        }
+
+        this.option.series.push(
+            {
+                name: '活跃人数分布',
+                type: 'heatmap',
+                coordinateSystem: 'geo',
+                data: data
+            }
+        )
+
+        this.refreshData()
+    }
+
     /**
      * 小图标事件
      */

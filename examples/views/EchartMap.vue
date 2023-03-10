@@ -37,7 +37,9 @@
 
                 <div>
                     <el-button size="mini" @click="addHeat">添加热力图</el-button>
-
+                </div>
+                <div>
+                    <el-button size="mini" @click="addHeatPoint">添加热力图(单点)</el-button>
                 </div>
                 <div>
                     <el-button size="mini" @click="addToolTips">添加Tooltip</el-button>
@@ -163,6 +165,10 @@ export default {
             ]
             this.objEmap.addHeatMapEffect(data1)
         },
+        addHeatPoint() {
+            const data = [[102.83, 24.88, 813],[102, 24, 800]]
+            this.objEmap.addHeatPoint(data)
+        },
         addFlyLine() {
             this.objEmap.addFlyLine()
         },
@@ -278,7 +284,6 @@ export default {
     },
     mounted() {
         this.initEMap()
-
     }
 }
 </script>
