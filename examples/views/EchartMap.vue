@@ -1,8 +1,8 @@
 <template>
     <div class="all">
-        <div style="background-color: black;z-index: 99999;color: white;position: absolute;left: 0px;top: 0px;"
-             v-show="toolTipShow"
-             id="toolTip">
+        <div v-show="toolTipShow"
+             id="toolTip"
+             style="background-color: black;z-index: 99999;color: white;position: absolute;left: 0px;top: 0px;">
             <span>{{ toolTipName }}</span>
         </div>
         <div id="forEMap" style="width: 100%;height: 100%"></div>
@@ -10,12 +10,12 @@
             <div class="menuInner">
                 <div>
                     <el-select
-                        size="mini"
-                        @change="initEMap"
                         v-model="value"
                         allow-create
                         filterable
-                        placeholder="请选择文章标签">
+                        placeholder="请选择文章标签"
+                        size="mini"
+                        @change="initEMap">
                         <el-option
                             v-for="item in cityList"
                             :key="item.value"
@@ -24,37 +24,52 @@
                         </el-option>
                     </el-select>
                 </div>
+                <br>
                 <div>
-                    <el-button size="mini" @click="addIcons">添加图标effectScatter</el-button>
+                    <el-button size="mini" type="primary" @click="addIcons">添加图标effectScatter</el-button>
                 </div>
-                <div>
-                    <el-button size="mini" @click="addIconsCustom">添加自定义图标</el-button>
-                </div>
-                <div>
-                    <el-button size="mini" @click="addIconsCustomEvent">添加自定义图标事件</el-button>
-                </div>
+                <br>
+
 
                 <div>
-                    <el-button size="mini" @click="addHeat">添加热力图</el-button>
+                    <el-button size="mini" type="primary" @click="addHeat">添加热力图</el-button>
                 </div>
+                <br>
                 <div>
-                    <el-button size="mini" @click="addHeatPoint">添加热力图(单点)</el-button>
+                    <el-button size="mini" type="primary" @click="addHeatPoint">添加热力图(单点)</el-button>
                 </div>
-                <div>
-                    <el-button size="mini" @click="addToolTips">添加Tooltip</el-button>
+                <br>
 
-                </div>
-
-                <div>
-                    <el-button size="mini" @click="addFlyLine">添加飞行线</el-button>
-                </div>
 
                 <div>
-                    <el-button size="mini" @click="objEmap.addTrainTrack()">添加铁路线</el-button>
+                    <el-button size="mini" type="primary" @click="addFlyLine">添加飞行线</el-button>
                 </div>
+                <br>
+
                 <div>
-                    <el-button size="mini" @click="addAutoTooltip">添加自动ToolTip</el-button>
+                    <el-button size="mini" type="primary" @click="objEmap.addTrainTrack()">添加铁路线</el-button>
                 </div>
+                <el-divider></el-divider>
+
+                <div>
+                    <el-button size="mini" type="primary" @click="addToolTips">添加Tooltip</el-button>
+
+                </div>
+                <br>
+                <div>
+                    <el-button size="mini" type="primary" @click="addAutoTooltip">添加自动ToolTip</el-button>
+                </div>
+                <el-divider></el-divider>
+                <div>
+                    <el-button size="mini" type="primary" @click="addIconsCustom">添加自定义图标</el-button>
+                </div>
+                <br>
+                <div>
+                    <el-button size="mini" type="primary" @click="addIconsCustomEvent">添加自定义图标事件</el-button>
+                </div>
+                <br>
+                <el-divider></el-divider>
+
             </div>
         </div>
     </div>
@@ -164,7 +179,7 @@ export default {
             this.objEmap.addHeatMapEffect(data1)
         },
         addHeatPoint() {
-            const data = [[102.83, 24.88, 813],[102, 24, 800]]
+            const data = [[102.83, 24.88, 813], [102, 24, 800]]
             this.objEmap.addHeatPoint(data)
         },
         addFlyLine() {
@@ -285,14 +300,12 @@ export default {
     }
 }
 </script>
-
-<style scoped lang="scss">
-#forEMap {
-    //background-image: url("./img/yn.png");
-    //background-position: 50% 47%;
-    //background-repeat: no-repeat;
-    //background-size: 46% 80%;
+<style lang="scss">
+.el-select {
+    background-color: yellow !important;
 }
+</style>
+<style lang="scss" scoped>
 
 .all {
     width: 100%;
@@ -312,10 +325,7 @@ export default {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-
-            div {
-                margin: 10px;
-            }
+            padding: 8px;
         }
 
     }

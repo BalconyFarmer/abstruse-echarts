@@ -3,8 +3,8 @@
         <div class="mainFirst">
             <div class="left">
                 <div class="leftList">
-                    <div class="btns" @click="changeRoute(1)">ECharts</div>
                     <div class="btns" @click="changeRoute(2)">EChartsMap</div>
+                    <div class="btns" @click="changeRoute(1)">ECharts</div>
                 </div>
             </div>
             <div class="right">
