@@ -30,7 +30,7 @@ export default {
     },
     data: function () {
         return {
-            route: "1",
+            route: "2",
         }
     },
     watch: {

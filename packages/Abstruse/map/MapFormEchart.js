@@ -185,7 +185,10 @@ class MapFormEchart {
                     emphasis: {show: false, color: "#000000"}
                 },
                 tooltip: {trigger: "none"},
-                z: 2
+                z: 2,
+                viewControl: {
+                    autoRotate: true
+                }
             },
 
             // 顶层图层 显示各市名称

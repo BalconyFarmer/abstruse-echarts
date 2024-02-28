@@ -14,7 +14,6 @@
                         @change="initEMap"
                         v-model="value"
                         allow-create
-                        multiple
                         filterable
                         placeholder="请选择文章标签">
                         <el-option
@@ -147,10 +146,9 @@ export default {
     },
     methods: {
         initEMap(data) {
-
             if (data) {
                 this.objEmap = new Abstruse.MapFormEchart("forEMap")
-                this.objEmap.refreshEchartMap(data[0])
+                this.objEmap.refreshEchartMap(data)
             } else {
                 this.objEmap = new Abstruse.MapFormEchart("forEMap")
                 this.objEmap.refreshEchartMap("云南省")
@@ -300,7 +298,6 @@ export default {
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: url("./img/background.png");
 
     .menu {
         position: absolute;
