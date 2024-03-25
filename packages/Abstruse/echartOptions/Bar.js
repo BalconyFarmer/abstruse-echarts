@@ -409,7 +409,7 @@ class Bar extends Base {
         this.funnelOption.series[0].data = [];
 
         data.forEach(item => {
-            this.funnelOption.legend.data.push(data.name);
+            this.funnelOption.legend.data.push(item.name);
             this.funnelOption.series[0].data.push(item);
         });
     }
